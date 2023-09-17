@@ -1,2 +1,3 @@
 rootProject.name = 'Fergie-Lab6'
+include 'server'
 
