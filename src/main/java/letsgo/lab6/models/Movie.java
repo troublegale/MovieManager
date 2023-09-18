@@ -76,4 +76,18 @@ public class Movie {
     public void setOperator(Person operator) {
         this.operator = operator;
     }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", coordinates=" + coordinates +
+                ", creationDate=" + creationDate +
+                ", oscarsCount=" + oscarsCount +
+                ", genre=" + genre +
+                ", mpaaRating=" + mpaaRating +
+                ", operator=" + operator +
+                '}';
+    }
 }

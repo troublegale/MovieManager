@@ -9,12 +9,12 @@ public class Exit extends Command {
 
     @Override
     public String execute(Object argument) {
-        return null;
+        return "Выход из программы...\nДо свидания!";
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return "выход из программы.";
     }
 
     @Override

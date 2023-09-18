@@ -9,12 +9,12 @@ public class RemoveHead extends Command {
 
     @Override
     public String execute(Object argument) {
-        return null;
+        return collectionManager.removeHead();
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return "удаляет первый элемент коллекции.";
     }
 
     @Override

@@ -9,12 +9,12 @@ public class Clear extends Command {
 
     @Override
     public String execute(Object argument) {
-        return null;
+        return collectionManager.clearCollection();
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return "удаляет все элементы из коллекции.";
     }
 
     @Override

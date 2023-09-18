@@ -2,19 +2,19 @@ package letsgo.lab6.commands;
 
 import letsgo.lab6.managers.CollectionManager;
 
-public class SumOfOscars extends Command {
-    public SumOfOscars(CollectionManager collectionManager) {
+public class SumOfOscarsCount extends Command {
+    public SumOfOscarsCount(CollectionManager collectionManager) {
         super(collectionManager);
     }
 
     @Override
     public String execute(Object argument) {
-        return null;
+        return collectionManager.getSumOfOscarsCount();
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return "выводит на экран количество всех Оскаров у всех фильмов коллекции.";
     }
 
     @Override

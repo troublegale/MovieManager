@@ -9,16 +9,17 @@ public class RemoveByID extends Command {
 
     @Override
     public String execute(Object argument) {
-        return null;
+        int id = (int) argument;
+        return collectionManager.removeById(id);
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return "удаляет из коллекции элемент с заданным id.";
     }
 
     @Override
     public String getArgumentRequirement() {
-        return null;
+        return "(int <id>)";
     }
 }
