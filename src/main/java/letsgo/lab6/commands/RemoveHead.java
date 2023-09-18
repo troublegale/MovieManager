@@ -8,13 +8,13 @@ public class RemoveHead extends Command {
     }
 
     @Override
-    public String execute(Object argument) {
+    public String execute(String argument) {
         return collectionManager.removeHead();
     }
 
     @Override
     public String getDescription() {
-        return "удаляет первый элемент коллекции.";
+        return "удалить первый элемент коллекции.";
     }
 
     @Override

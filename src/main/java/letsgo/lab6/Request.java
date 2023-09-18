@@ -1,6 +1,6 @@
 package letsgo.lab6;
 
-import letsgo.lab6.commands.Command;
+import java.io.Serializable;
 
-public record Request(Command command, Object argument) {
+public record Request(String commandName, Object argument) implements Serializable {
 }

@@ -10,7 +10,7 @@ public abstract class Command {
         this.collectionManager = collectionManager;
     }
 
-    abstract String execute(Object argument);
+    public abstract String execute(String argument);
     abstract String getDescription();
     abstract String getArgumentRequirement();
 }

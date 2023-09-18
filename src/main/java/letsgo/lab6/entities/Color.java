@@ -1,4 +1,4 @@
-package letsgo.lab6.models;
+package letsgo.lab6.entities;
 
 public enum Color {
 

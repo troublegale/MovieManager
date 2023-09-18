@@ -1,6 +1,8 @@
 package letsgo.lab6.commands;
 
 import letsgo.lab6.managers.CollectionManager;
+import letsgo.lab6.entities.Movie;
+import letsgo.lab6.managers.EntityManager;
 
 public class AddIfMin extends Command {
     public AddIfMin(CollectionManager collectionManager) {
@@ -8,13 +10,14 @@ public class AddIfMin extends Command {
     }
 
     @Override
-    public String execute(Object argument) {
-        return null;
+    public String execute(String argument) {
+        Movie movie = EntityManager.constructMovie();
+        return collectionManager.addIfMin(movie);
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return "добавить элемент в коллекцию, если он меньше всех элементов по значению.";
     }
 
     @Override

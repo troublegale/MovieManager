@@ -1,6 +1,7 @@
 package letsgo.lab6.commands;
 
 import letsgo.lab6.managers.CollectionManager;
+import letsgo.lab6.entities.Movie;
 
 public class RemoveIfGreater extends Command {
     public RemoveIfGreater(CollectionManager collectionManager) {
@@ -8,8 +9,9 @@ public class RemoveIfGreater extends Command {
     }
 
     @Override
-    public String execute(Object argument) {
-        return null;
+    public String execute(String argument) {
+        Movie movie = null;
+        return collectionManager.removeIfGreater(movie);
     }
 
     @Override

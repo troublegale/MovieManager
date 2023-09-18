@@ -8,13 +8,13 @@ public class Clear extends Command {
     }
 
     @Override
-    public String execute(Object argument) {
+    public String execute(String argument) {
         return collectionManager.clearCollection();
     }
 
     @Override
     public String getDescription() {
-        return "удаляет все элементы из коллекции.";
+        return "удалить все элементы из коллекции.";
     }
 
     @Override

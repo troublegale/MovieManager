@@ -4,15 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b44efd9-b455-4b29-b81c-ea25e539375e" name="Changes" comment="added commands &amp; some of the managers, implementation of some commands">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="8b44efd9-b455-4b29-b81c-ea25e539375e" name="Changes" comment="added implementation of some more commands">
+      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/entities/Coordinates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/entities/Location.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/managers/EntityManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/AddIfMin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/AddIfMin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/Clear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/CountGreaterThanGenre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/CountGreaterThanGenre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/ExecuteScript.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/Exit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/GroupCountingByID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/GroupCountingByGenre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/Help.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/Info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/RemoveByID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/RemoveByID.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/RemoveHead.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/RemoveHead.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/RemoveIfGreater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/RemoveIfGreater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/Show.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/SumOfOscarsCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/SumOfOscarsCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/commands/Update.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/managers/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/managers/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/models/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/models/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/managers/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/managers/CommandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/models/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/entities/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/models/Coordinates.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/models/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/entities/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/models/Location.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/models/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/entities/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/models/MovieGenre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/entities/MovieGenre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/models/MpaaRating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/entities/MpaaRating.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/entities/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +47,21 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -46,24 +85,58 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "jbr-17",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "proofread",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;jbr-17&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;proofread&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JAVA&quot;
+    ]
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="Fergie-Lab6 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.Fergie-Lab6 [build]" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -74,7 +147,10 @@
       <updated>1694976601150</updated>
       <workItem from="1694976602228" duration="5964000" />
       <workItem from="1694982702409" duration="16000" />
-      <workItem from="1695022941269" duration="2090000" />
+      <workItem from="1695022941269" duration="2722000" />
+      <workItem from="1695039431041" duration="5236000" />
+      <workItem from="1695063772634" duration="4249000" />
+      <workItem from="1695068650899" duration="1398000" />
     </task>
     <task id="LOCAL-00001" summary="setup">
       <option name="closed" value="true" />
@@ -100,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694982646130</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added implementation of some more commands">
+      <option name="closed" value="true" />
+      <created>1695025657190</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695025657190</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +195,7 @@
     <MESSAGE value="setup" />
     <MESSAGE value="added models" />
     <MESSAGE value="added commands &amp; some of the managers, implementation of some commands" />
-    <option name="LAST_COMMIT_MESSAGE" value="added commands &amp; some of the managers, implementation of some commands" />
+    <MESSAGE value="added implementation of some more commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="added implementation of some more commands" />
   </component>
 </project>

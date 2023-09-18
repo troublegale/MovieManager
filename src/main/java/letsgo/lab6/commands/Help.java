@@ -13,10 +13,10 @@ public class Help extends Command {
         this.commandMap = commandMap;
     }
     @Override
-    public String execute(Object argument) {
+    public String execute(String argument) {
         StringBuilder sb = new StringBuilder();
         commandMap.forEach((k, v) -> sb.append(k)
-                .append(v.getArgumentRequirement() == null ? "" : v.getArgumentRequirement())
+                .append(v.getArgumentRequirement() == null ? "" : " " + v.getArgumentRequirement())
                 .append(" - ").append(v.getDescription()));
         return sb.toString();
     }

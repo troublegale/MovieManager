@@ -8,18 +8,18 @@ public class RemoveByID extends Command {
     }
 
     @Override
-    public String execute(Object argument) {
-        int id = (int) argument;
+    public String execute(String argument) {
+        Long id = Long.parseLong(argument);
         return collectionManager.removeById(id);
     }
 
     @Override
     public String getDescription() {
-        return "удаляет из коллекции элемент с заданным id.";
+        return "удалить из коллекции элемент с заданным id.";
     }
 
     @Override
     public String getArgumentRequirement() {
-        return "(int <id>)";
+        return "<int id>";
     }
 }

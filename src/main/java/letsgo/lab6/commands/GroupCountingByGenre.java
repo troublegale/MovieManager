@@ -2,14 +2,14 @@ package letsgo.lab6.commands;
 
 import letsgo.lab6.managers.CollectionManager;
 
-public class GroupCountingByID extends Command {
-    public GroupCountingByID(CollectionManager collectionManager) {
+public class GroupCountingByGenre extends Command {
+    public GroupCountingByGenre(CollectionManager collectionManager) {
         super(collectionManager);
     }
 
     @Override
-    public String execute(Object argument) {
-        return null;
+    public String execute(String argument) {
+        return collectionManager.groupCountingByGenre();
     }
 
     @Override

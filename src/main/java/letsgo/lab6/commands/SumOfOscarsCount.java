@@ -8,13 +8,13 @@ public class SumOfOscarsCount extends Command {
     }
 
     @Override
-    public String execute(Object argument) {
+    public String execute(String argument) {
         return collectionManager.getSumOfOscarsCount();
     }
 
     @Override
     public String getDescription() {
-        return "выводит на экран количество всех Оскаров у всех фильмов коллекции.";
+        return "вывести на экран количество всех Оскаров у всех фильмов коллекции.";
     }
 
     @Override

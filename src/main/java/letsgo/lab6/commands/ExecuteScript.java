@@ -8,7 +8,7 @@ public class ExecuteScript extends Command {
     }
 
     @Override
-    public String execute(Object argument) {
+    public String execute(String argument) {
         return null;
     }
 

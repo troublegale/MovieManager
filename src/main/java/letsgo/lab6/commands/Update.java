@@ -8,17 +8,18 @@ public class Update extends Command {
     }
 
     @Override
-    public String execute(Object argument) {
-        return null;
+    public String execute(String argument) {
+        long id = Long.parseLong(argument);
+        return collectionManager.updateElement(id);
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return "обновить значение элемента с заданным id.";
     }
 
     @Override
     public String getArgumentRequirement() {
-        return null;
+        return "<long id>";
     }
 }

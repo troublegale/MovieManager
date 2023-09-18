@@ -8,13 +8,13 @@ public class Exit extends Command {
     }
 
     @Override
-    public String execute(Object argument) {
-        return "Выход из программы...\nДо свидания!";
+    public String execute(String argument) {
+        return "Выход";
     }
 
     @Override
     public String getDescription() {
-        return "выход из программы.";
+        return "выйти из программы.";
     }
 
     @Override

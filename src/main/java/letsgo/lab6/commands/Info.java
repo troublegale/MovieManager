@@ -8,7 +8,7 @@ public class Info extends Command {
         super(collectionManager);
     }
     @Override
-    public String execute(Object argument) {
+    public String execute(String argument) {
         return collectionManager.getCollectionInfo();
     }
 

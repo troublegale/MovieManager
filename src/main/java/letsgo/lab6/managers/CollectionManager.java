@@ -1,6 +1,7 @@
 package letsgo.lab6.managers;
 
-import letsgo.lab6.models.Movie;
+import letsgo.lab6.entities.Movie;
+import letsgo.lab6.entities.MovieGenre;
 
 import java.time.LocalDate;
 import java.util.Deque;
@@ -20,13 +21,13 @@ public class CollectionManager {
         sb.append("Фильмы хранятся в коллекции ").append(movieDeque.getClass()).append(".\n");
         sb.append("Дата инициализации коллекции - ").append(initDate).append(".\n");
         if (movieDeque.isEmpty()) {
-            sb.append("Пока в коллекции ничего нет.\n");
+            sb.append("Пока что коллекция пуста.\n");
         } else {
             sb.append("В коллекции хранится ").append(movieDeque.size());
             sb.append(movieDeque.size() % 10 == 1 && movieDeque.size() != 11 ?
                     "элемент.\n" : "элементов(а).\n");
 
-            int mostOscars = movieDeque.stream().mapToInt(Movie::getOscarsCount).max().orElseThrow();
+            Long mostOscars = movieDeque.stream().mapToLong(Movie::getOscarsCount).max().orElseThrow();
             sb.append("Самое большое количество Оскаров у одного фильма - ").append(mostOscars).append(".\n");
         }
         return sb.toString();
@@ -50,14 +51,14 @@ public class CollectionManager {
         return "Коллекция была очищена. Было удалено " + size + " элементов.\n";
     }
 
-    private Movie findById(int id) {
-        if (movieDeque.stream().mapToInt(Movie::getId).anyMatch(n -> n == id)) {
-            return movieDeque.stream().filter(m -> m.getId() == id).toList().get(0);
+    private Movie findById(Long id) {
+        if (movieDeque.stream().mapToLong(Movie::getId).anyMatch(n -> n == id)) {
+            return movieDeque.stream().filter(m -> m.getId().equals(id)).toList().get(0);
         }
         return null;
     }
 
-    public String removeById(int id) {
+    public String removeById(Long id) {
         Movie movie = findById(id);
         if (movie != null) {
             movieDeque.remove(movie);
@@ -78,8 +79,66 @@ public class CollectionManager {
         if (movieDeque.isEmpty()) {
             return "В коллекции нет элементов, и Оскаров тоже :(\n";
         }
-        int sumOfOscarsCount = movieDeque.stream().mapToInt(Movie::getOscarsCount).sum();
+        long sumOfOscarsCount = movieDeque.stream().mapToLong(Movie::getOscarsCount).sum();
         return "Количество всех Оскаров у всех фильмов коллекции - " + sumOfOscarsCount + ".\n";
+    }
+
+    public String addElement(Movie movie) {
+        movieDeque.add(movie);
+        return "Следующий элемент был добавлен в коллекцию:\n" + movie + "\n";
+    }
+
+    public String addIfMin(Movie movie) {
+        if (movieDeque.isEmpty()) {
+            return addElement(movie);
+        }
+        Movie minMovie = movieDeque.stream().min(Movie::compareTo).orElseThrow();
+        if (movie.compareTo(minMovie) < 0) {
+            return addElement(movie);
+        }
+        return "Данный элемент не был добавлен в коллекцию, " +
+                "так как он больше либо равен одному из уже добавленных элементов.\n";
+    }
+
+    public String countGreaterThanGenre(MovieGenre genre) {
+        long count = movieDeque.stream().filter(m -> m.getGenre().compareTo(genre) > 0).count();
+        return count == 0 ? "В коллекции не нашлось подходящих элементов\n" : "Подходящих элементов: " + count + ".\n";
+    }
+
+    public String groupCountingByGenre() {
+        if (movieDeque.isEmpty()) {
+            return "Пока что коллекция пуста.\n";
+        }
+        StringBuilder sb = new StringBuilder();
+        for (MovieGenre targetGenre : MovieGenre.values()) {
+            long count = movieDeque.stream().filter(m -> m.getGenre() == targetGenre).count();
+            sb.append("Фильмов в жанре ").append(targetGenre).append(count == 0 ? " нет.\n" : ": " + count);
+        }
+        return sb.toString();
+    }
+
+    public String removeIfGreater(Movie movie) {
+        if (movieDeque.isEmpty()) {
+            return "Коллекция уже пуста.";
+        }
+        int preCount = movieDeque.size();
+        movieDeque.removeIf(m -> m.compareTo(movie) < 0);
+        int postCount = movieDeque.size();
+        if (preCount == postCount) {
+            return "Ни один элемент не был удалён.";
+        }
+        return "Было удалено элементов: " + (preCount - postCount);
+    }
+
+    public String updateElement(Long id) {
+        if (movieDeque.stream().noneMatch(m -> m.getId().equals(id))) {
+            return "В коллекции нет элемента с таким id.\n";
+        }
+        Movie oldMovie = movieDeque.stream().filter(m -> m.getId().equals(id)).toList().get(0);
+        movieDeque.remove(oldMovie);
+        Movie newMovie = EntityManager.constructMovie(id);
+        movieDeque.add(newMovie);
+        return "Старый элемент коллекции:\n" + oldMovie + "\nБыл заменён на новый:\n" + newMovie + "\n";
     }
 
 }
