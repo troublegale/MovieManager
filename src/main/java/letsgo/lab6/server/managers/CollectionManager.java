@@ -1,7 +1,7 @@
 package letsgo.lab6.server.managers;
 
 import letsgo.lab6.server.entities.Movie;
-import letsgo.lab6.server.entities.MovieGenre;
+import letsgo.lab6.common.enums.MovieGenre;
 
 import java.time.LocalDate;
 import java.util.Deque;
@@ -11,11 +11,11 @@ import java.util.Queue;
 public class CollectionManager {
 
     private final Deque<Movie> movieDeque;
-    private final LocalDate initDate;
+    private LocalDate initDate;
 
-    public CollectionManager(Deque<Movie> movieDeque) {
+    public CollectionManager(Deque<Movie> movieDeque, LocalDate initDate) {
         this.movieDeque = movieDeque;
-        this.initDate = LocalDate.now();
+        this.initDate = initDate;
     }
 
     public String getCollectionInfo() {
@@ -86,6 +86,9 @@ public class CollectionManager {
     }
 
     public String addElement(Movie movie) {
+        if (movieDeque.isEmpty()) {
+            initDate = LocalDate.parse(movie.getCreationDate());
+        }
         movieDeque.add(movie);
         return "Следующий элемент был добавлен в коллекцию:\n" + movie + "\n";
     }

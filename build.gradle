@@ -17,3 +17,41 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+tasks.register('serverBuild', Jar) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from(sourceSets.main.output) { include "**" }
+    from {
+        configurations.runtimeClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    manifest {
+        attributes 'Main-Class': 'letsgo.lab6.server.ServerMain'
+    }
+    destinationDirectory = file("$rootDir/jar")
+    archivesBaseName = "lab6server"
+    exclude ("scr/main/java/me/lab6/client/**")
+}
+
+tasks.register('clientBuild', Jar) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from(sourceSets.main.output) { include "**" }
+    from {
+        configurations.runtimeClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    manifest {
+        attributes 'Main-Class': 'letsgo.lab6.client.ClientMain'
+    }
+    destinationDirectory = file("$rootDir/jar")
+    archivesBaseName = "lab6client"
+    exclude ("scr/main/java/me/lab6/server/**")
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

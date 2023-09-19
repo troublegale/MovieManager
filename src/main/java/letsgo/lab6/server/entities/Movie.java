@@ -1,5 +1,8 @@
 package letsgo.lab6.server.entities;
 
+import letsgo.lab6.common.enums.MovieGenre;
+import letsgo.lab6.common.enums.MpaaRating;
+
 public class Movie implements Comparable<Movie> {
 
     private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически

@@ -1,4 +1,4 @@
-package letsgo.lab6.server.entities;
+package letsgo.lab6.common.enums;
 
 public enum MpaaRating {
 

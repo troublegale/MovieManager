@@ -1,7 +1,7 @@
 package letsgo.lab6.server.commands;
 
 import letsgo.lab6.server.managers.CollectionManager;
-import letsgo.lab6.server.entities.MovieGenre;
+import letsgo.lab6.common.enums.MovieGenre;
 
 public class CountGreaterThanGenre extends Command {
     public CountGreaterThanGenre(CollectionManager collectionManager) {

@@ -1,5 +1,9 @@
 package letsgo.lab6.server.managers;
 
+import letsgo.lab6.common.enums.Color;
+import letsgo.lab6.common.enums.Country;
+import letsgo.lab6.common.enums.MovieGenre;
+import letsgo.lab6.common.enums.MpaaRating;
 import letsgo.lab6.server.entities.*;
 
 import java.time.LocalDate;
@@ -17,6 +21,10 @@ public class EntityManager {
     public static Movie constructMovie(Queue<String> attributes) {
         Long id = getNextID();
         String creationDate = LocalDate.now().toString();
+        return constructMovie(id, creationDate, attributes);
+    }
+
+    public static Movie constructMovie(Long id, String creationDate, Queue<String> attributes) {
         String name = attributes.poll();
         Coordinates coordinates = constructCoordinates(attributes);
         MovieGenre genre = MovieGenre.valueOf(attributes.poll());
@@ -42,15 +50,11 @@ public class EntityManager {
         return new Person(name, height, eyeColor, nationality, location);
     }
 
-    public static Location constructLocation(Queue<String> attributes) {
+    private static Location constructLocation(Queue<String> attributes) {
         Float x = Float.parseFloat(Objects.requireNonNull(attributes.poll()));
         Float y = Float.parseFloat(Objects.requireNonNull(attributes.poll()));
         Long z = Long.parseLong(Objects.requireNonNull(attributes.poll()));
         return new Location(x, y, z);
-    }
-
-    public static Movie constructMovie(Long id, String creationDate, Queue<String> attributes) {
-        return null;
     }
 
     public static void setNextID(Long newNextID) {

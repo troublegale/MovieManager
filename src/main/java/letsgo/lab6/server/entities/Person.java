@@ -1,5 +1,8 @@
 package letsgo.lab6.server.entities;
 
+import letsgo.lab6.common.enums.Color;
+import letsgo.lab6.common.enums.Country;
+
 public class Person {
 
     private String name; //Поле не может быть null, Строка не может быть пустой
