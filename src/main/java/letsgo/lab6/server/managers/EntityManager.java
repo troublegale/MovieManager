@@ -26,10 +26,10 @@ public class EntityManager {
 
     public static Movie constructMovie(Long id, String creationDate, Queue<String> attributes) {
         String name = attributes.poll();
-        Coordinates coordinates = constructCoordinates(attributes);
         MovieGenre genre = MovieGenre.valueOf(attributes.poll());
         MpaaRating rating = MpaaRating.valueOf(attributes.poll());
         Long oscarsCount = Long.parseLong(Objects.requireNonNull(attributes.poll()));
+        Coordinates coordinates = constructCoordinates(attributes);
         Person operator = constructOperator(attributes);
 
         return new Movie(id, creationDate, name, coordinates, genre, rating, oscarsCount, operator);

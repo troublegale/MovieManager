@@ -1,4 +1,6 @@
-package letsgo.lab6.client.validation;
+package letsgo.lab6.client.validation.constraints;
+
+import letsgo.lab6.client.validation.DataType;
 
 public class AttributeConstraints extends Constraints {
 

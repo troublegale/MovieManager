@@ -1,7 +1,5 @@
 TODO: complete all these steps
 
-validation process for the commands
-
 logic for the serialization & deserialization process
 
 implement the TCP connection establishment

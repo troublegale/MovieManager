@@ -1,6 +1,8 @@
-package letsgo.lab6.client.validation;
+package letsgo.lab6.client.validation.constraints;
 
-public class Constraints {
+import letsgo.lab6.client.validation.DataType;
+
+public abstract class Constraints {
 
     private final DataType dataType;
     private final boolean nullable;
