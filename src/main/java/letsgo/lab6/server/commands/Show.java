@@ -5,10 +5,12 @@ import letsgo.lab6.server.managers.CollectionManager;
 
 import java.util.Deque;
 
-public class Show extends Command {
+public class Show implements Command {
+
+    private final CollectionManager collectionManager;
 
     public Show(CollectionManager collectionManager) {
-        super(collectionManager);
+        this.collectionManager = collectionManager;
     }
     @Override
     public String execute(String argument) {

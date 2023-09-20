@@ -2,9 +2,12 @@ package letsgo.lab6.server.commands;
 
 import letsgo.lab6.server.managers.CollectionManager;
 
-public class Clear extends Command {
+public class Clear implements Command {
+
+    private final CollectionManager collectionManager;
+
     public Clear(CollectionManager collectionManager) {
-        super(collectionManager);
+        this.collectionManager = collectionManager;
     }
 
     @Override

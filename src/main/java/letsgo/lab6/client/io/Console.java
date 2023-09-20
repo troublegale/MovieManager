@@ -3,7 +3,7 @@ package letsgo.lab6.client.io;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-import letsgo.lab6.client.validation.InputValidator;
+import letsgo.lab6.client.validation.CommandValidator;
 
 public class Console {
 
@@ -27,7 +27,7 @@ public class Console {
     private void handleInput() {
         String input = scanner.nextLine().trim();
         if (!input.isBlank()) {
-            String validationResult = InputValidator.validateCommand(input);
+            String validationResult = CommandValidator.validateCommand(input);
             if (!(validationResult == null)) {
                 System.out.println(validationResult);
             }

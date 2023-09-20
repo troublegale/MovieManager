@@ -5,9 +5,12 @@ import letsgo.lab6.server.managers.CollectionManager;
 
 import java.util.Deque;
 
-public class SumOfOscarsCount extends Command {
+public class SumOfOscarsCount implements Command {
+
+    private final CollectionManager collectionManager;
+
     public SumOfOscarsCount(CollectionManager collectionManager) {
-        super(collectionManager);
+        this.collectionManager = collectionManager;
     }
 
     @Override

@@ -9,7 +9,7 @@ public class Person {
     private Long height; //Поле может быть null, Значение поля должно быть больше 0
     private Color eyeColor; //Поле не может быть null
     private Country nationality; //Поле не может быть null
-    private Location location; //Поле может быть null
+    private Location location; //Поле не может быть null
 
     public Person(String name, Long height, Color eyeColor, Country nationality, Location location) {
         this.name = name;

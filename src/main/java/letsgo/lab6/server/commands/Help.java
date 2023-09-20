@@ -1,15 +1,12 @@
 package letsgo.lab6.server.commands;
 
-import letsgo.lab6.server.managers.CollectionManager;
-
 import java.util.Map;
 
-public class Help extends Command {
+public class Help implements Command {
 
     private final Map<String, Command> commandMap;
 
-    public Help(Map<String, Command> commandMap, CollectionManager collectionManager) {
-        super(collectionManager);
+    public Help(Map<String, Command> commandMap) {
         this.commandMap = commandMap;
     }
     @Override

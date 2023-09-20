@@ -6,9 +6,12 @@ import letsgo.lab6.common.enums.MovieGenre;
 
 import java.util.Deque;
 
-public class CountGreaterThanGenre extends Command {
+public class CountGreaterThanGenre implements Command {
+
+    private final CollectionManager collectionManager;
+
     public CountGreaterThanGenre(CollectionManager collectionManager) {
-        super(collectionManager);
+        this.collectionManager = collectionManager;
     }
 
     @Override

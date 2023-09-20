@@ -1,11 +1,7 @@
 package letsgo.lab6.server.commands;
 
-import letsgo.lab6.server.managers.CollectionManager;
 
-public class Exit extends Command {
-    public Exit(CollectionManager collectionManager) {
-        super(collectionManager);
-    }
+public class Exit implements Command {
 
     @Override
     public String execute(String argument) {

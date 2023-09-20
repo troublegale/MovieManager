@@ -17,7 +17,7 @@ public class CommandManager {
         commandMap.put("clear", new Clear(collectionManager));
         commandMap.put("count_greater_than_genre", new CountGreaterThanGenre(collectionManager));
         commandMap.put("execute_script", new ExecuteScript(collectionManager));
-        commandMap.put("exit", new Exit(collectionManager));
+        commandMap.put("exit", new Exit());
         commandMap.put("group_counting_by_id", new GroupCountingByGenre(collectionManager));
         commandMap.put("info", new Info(collectionManager));
         commandMap.put("remove_by_id", new RemoveByID(collectionManager));
@@ -26,7 +26,7 @@ public class CommandManager {
         commandMap.put("show", new Show(collectionManager));
         commandMap.put("sum_of_oscars_count", new SumOfOscarsCount(collectionManager));
         commandMap.put("update", new Update(collectionManager));
-        commandMap.put("help", new Help(commandMap, collectionManager));
+        commandMap.put("help", new Help(commandMap));
     }
 
     public String execute(String commandName, String argument) {

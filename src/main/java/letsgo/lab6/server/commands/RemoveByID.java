@@ -2,9 +2,12 @@ package letsgo.lab6.server.commands;
 
 import letsgo.lab6.server.managers.CollectionManager;
 
-public class RemoveByID extends Command {
+public class RemoveByID implements Command {
+
+    private final CollectionManager collectionManager;
+
     public RemoveByID(CollectionManager collectionManager) {
-        super(collectionManager);
+        this.collectionManager = collectionManager;
     }
 
     @Override

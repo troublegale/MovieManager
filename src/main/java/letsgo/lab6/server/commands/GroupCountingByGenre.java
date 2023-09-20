@@ -6,9 +6,12 @@ import letsgo.lab6.server.managers.CollectionManager;
 
 import java.util.Deque;
 
-public class GroupCountingByGenre extends Command {
+public class GroupCountingByGenre implements Command {
+
+    private final CollectionManager collectionManager;
+
     public GroupCountingByGenre(CollectionManager collectionManager) {
-        super(collectionManager);
+        this.collectionManager = collectionManager;
     }
 
     @Override

@@ -2,9 +2,12 @@ package letsgo.lab6.server.commands;
 
 import letsgo.lab6.server.managers.CollectionManager;
 
-public class ExecuteScript extends Command {
+public class ExecuteScript implements Command {
+
+    private final CollectionManager collectionManager;
+
     public ExecuteScript(CollectionManager collectionManager) {
-        super(collectionManager);
+        this.collectionManager = collectionManager;
     }
 
     @Override

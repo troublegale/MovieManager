@@ -6,10 +6,12 @@ import letsgo.lab6.server.managers.CollectionManager;
 import java.time.LocalDate;
 import java.util.Deque;
 
-public class Info extends Command {
+public class Info implements Command {
+
+    private final CollectionManager collectionManager;
 
     public Info(CollectionManager collectionManager) {
-        super(collectionManager);
+        this.collectionManager = collectionManager;
     }
     @Override
     public String execute(String argument) {

@@ -12,6 +12,18 @@ public class Constraints {
         positive = false;
     }
 
+    public Constraints(DataType dataType) {
+        this.dataType = dataType;
+        nullable = false;
+        positive = false;
+    }
+
+    public Constraints(DataType dataType, boolean nullable, boolean positive) {
+        this.dataType = dataType;
+        this.nullable = nullable;
+        this.positive = positive;
+    }
+
     public DataType getDataType() {
         return dataType;
     }

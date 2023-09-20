@@ -1,9 +1,6 @@
 TODO: complete all these steps
 
-validation process for the commands, put all the commands inside the Map in InputValidator
-
-create a new Constraints class extending the current one for the attributes input (e.g. Movie's name, genre, etc.)
-containing an inviteMessage, a wrongInputMessage, etc.
+validation process for the commands
 
 logic for the serialization & deserialization process
 

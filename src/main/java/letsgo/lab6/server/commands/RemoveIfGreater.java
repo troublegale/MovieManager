@@ -8,9 +8,12 @@ import java.util.ArrayDeque;
 import java.util.Collections;
 import java.util.Queue;
 
-public class RemoveIfGreater extends Command {
+public class RemoveIfGreater implements Command {
+
+    private final CollectionManager collectionManager;
+
     public RemoveIfGreater(CollectionManager collectionManager) {
-        super(collectionManager);
+        this.collectionManager = collectionManager;
     }
 
     @Override
