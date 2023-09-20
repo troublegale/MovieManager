@@ -1,6 +1,5 @@
 package letsgo.lab6.server.managers;
 
-import letsgo.lab6.common.network.Response;
 import letsgo.lab6.server.commands.*;
 
 import java.util.HashMap;

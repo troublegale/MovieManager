@@ -1,6 +1,5 @@
 package letsgo.lab6.server.commands;
 
-
 public class Exit implements Command {
 
     @Override
