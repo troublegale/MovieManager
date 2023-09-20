@@ -6,6 +6,7 @@ import letsgo.lab6.server.managers.EntityManager;
 
 import java.util.ArrayDeque;
 import java.util.Collections;
+import java.util.List;
 import java.util.Queue;
 
 public class AddIfMin extends Command {
@@ -15,10 +16,8 @@ public class AddIfMin extends Command {
 
     @Override
     public String execute(String argument) {
-        Queue<String> attributes = new ArrayDeque<>();
-        Collections.addAll(attributes, argument.split("\n"));
-        Movie movie = EntityManager.constructMovie(attributes);
-        return collectionManager.addIfMin(movie);
+        Queue<String> attributes = new ArrayDeque<>(List.of(argument.split("\n")));
+        return collectionManager.addIfMin(attributes);
     }
 
     @Override

@@ -20,7 +20,17 @@ public class InputValidator {
         if (constraints == null) {
             return "Несуществующая команда. Используйте 'help' для получения информации о доступных командах.";
         }
+        if (argumentIsPresent(inputWords, constraints.isNullable())) {
+            return null;
+        }
         return null;
+    }
+
+    private static boolean argumentIsPresent(String[] inputWords, boolean mandatory) {
+        if (!mandatory) {
+            return true;
+        }
+        return inputWords.length > 1;
     }
 
 }

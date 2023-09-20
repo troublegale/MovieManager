@@ -6,6 +6,7 @@ import letsgo.lab6.server.managers.EntityManager;
 
 import java.util.ArrayDeque;
 import java.util.Collections;
+import java.util.List;
 import java.util.Queue;
 
 public class Update extends Command {
@@ -15,8 +16,7 @@ public class Update extends Command {
 
     @Override
     public String execute(String argument) {
-        Queue<String> attributes = new ArrayDeque<>();
-        Collections.addAll(attributes, argument.split("\n"));
+        Queue<String> attributes = new ArrayDeque<>(List.of(argument.split("\n")));
         return collectionManager.updateElement(attributes);
     }
 

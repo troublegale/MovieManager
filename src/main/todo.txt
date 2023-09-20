@@ -1,0 +1,15 @@
+TODO: complete all these steps
+
+validation process for the commands, put all the commands inside the Map in InputValidator
+
+create a new Constraints class extending the current one for the attributes input (e.g. Movie's name, genre, etc.)
+containing an inviteMessage, a wrongInputMessage, etc.
+
+logic for the serialization & deserialization process
+
+implement the TCP connection establishment
+
+logic for Request sending (client) & receiving (server), Response sending (server) & receiving (client)
+
+XML parsing for the collection & saving collection into XML
+

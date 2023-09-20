@@ -1,6 +1,6 @@
 package letsgo.lab6.server.managers;
 
-import letsgo.lab6.common.Response;
+import letsgo.lab6.common.network.Response;
 import letsgo.lab6.server.commands.*;
 
 import java.util.HashMap;
@@ -29,10 +29,9 @@ public class CommandManager {
         commandMap.put("help", new Help(commandMap, collectionManager));
     }
 
-    public Response execute(String commandName, String argument) {
+    public String execute(String commandName, String argument) {
         Command command = commandMap.get(commandName);
-        String responseMessage = command.execute(argument);
-        return new Response(responseMessage);
+        return command.execute(argument);
     }
 
 }

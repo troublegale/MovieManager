@@ -4,30 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b44efd9-b455-4b29-b81c-ea25e539375e" name="Changes" comment="sorted everything into folders, created classes for future needs">
-      <change afterPath="$PROJECT_DIR$/jar/lab6client-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jar/lab6server-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/io/Console.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/io/EntityAttributesOrganizer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/DataType.java" afterDir="false" />
+    <list default="true" id="8b44efd9-b455-4b29-b81c-ea25e539375e" name="Changes" comment="started working on user io">
+      <change afterPath="$PROJECT_DIR$/src/main/todo.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/ClientMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/Console.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/ArgumentRequirements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/Constraints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/InputValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/Deserializers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/Deserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/Constraints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/Constraints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/DataType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/DataType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/InputValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/InputValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/Deserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/network/Deserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/network/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/network/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/Serializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/network/Serializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/CountGreaterThanGenre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/CountGreaterThanGenre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/enums/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/enums/Country.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/MovieGenre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/enums/MovieGenre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/MpaaRating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/enums/MpaaRating.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/GroupCountingByGenre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/GroupCountingByGenre.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/EntityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/EntityManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CommandManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,6 +179,10 @@
       <workItem from="1695063772634" duration="4249000" />
       <workItem from="1695068650899" duration="1583000" />
       <workItem from="1695108341124" duration="13451000" />
+      <workItem from="1695138261899" duration="616000" />
+      <workItem from="1695143080673" duration="2388000" />
+      <workItem from="1695146236663" duration="2399000" />
+      <workItem from="1695197838354" duration="997000" />
     </task>
     <task id="LOCAL-00001" summary="setup">
       <option name="closed" value="true" />
@@ -238,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695134085271</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="started working on user io">
+      <option name="closed" value="true" />
+      <created>1695138305216</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1695138305216</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +254,7 @@
     <MESSAGE value="added implementation of some more commands" />
     <MESSAGE value="commands themselves are done, added EntityManager &amp; done some tweaks" />
     <MESSAGE value="sorted everything into folders, created classes for future needs" />
-    <option name="LAST_COMMIT_MESSAGE" value="sorted everything into folders, created classes for future needs" />
+    <MESSAGE value="started working on user io" />
+    <option name="LAST_COMMIT_MESSAGE" value="started working on user io" />
   </component>
 </project>

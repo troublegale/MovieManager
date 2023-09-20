@@ -1,7 +1,6 @@
 package letsgo.lab6.server.managers;
 
 import letsgo.lab6.server.entities.Movie;
-import letsgo.lab6.common.enums.MovieGenre;
 
 import java.time.LocalDate;
 import java.util.Deque;
@@ -18,30 +17,12 @@ public class CollectionManager {
         this.initDate = initDate;
     }
 
-    public String getCollectionInfo() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Фильмы хранятся в коллекции ").append(movieDeque.getClass()).append(".\n");
-        sb.append("Дата инициализации коллекции - ").append(initDate).append(".\n");
-        if (movieDeque.isEmpty()) {
-            sb.append("Пока что коллекция пуста.\n");
-        } else {
-            sb.append("В коллекции хранится ").append(movieDeque.size());
-            sb.append(movieDeque.size() % 10 == 1 && movieDeque.size() != 11 ?
-                    "элемент.\n" : "элементов(а).\n");
-
-            Long mostOscars = movieDeque.stream().mapToLong(Movie::getOscarsCount).max().orElseThrow();
-            sb.append("Самое большое количество Оскаров у одного фильма - ").append(mostOscars).append(".\n");
-        }
-        return sb.toString();
+    public Deque<Movie> getMovieDeque() {
+        return movieDeque;
     }
 
-    public String getAllElementsAsString() {
-        if (movieDeque.isEmpty()) {
-            return "Коллекция пуста.\n";
-        }
-        StringBuilder sb = new StringBuilder();
-        movieDeque.forEach(m -> sb.append(m).append("\n\n"));
-        return sb.toString();
+    public LocalDate getInitDate() {
+        return initDate;
     }
 
     public String clearCollection() {
@@ -77,49 +58,30 @@ public class CollectionManager {
         return "Следующий элемент был удалён из коллекции:\n" + movie + "\n";
     }
 
-    public String getSumOfOscarsCount() {
-        if (movieDeque.isEmpty()) {
-            return "В коллекции нет элементов, и Оскаров тоже :(\n";
-        }
-        long sumOfOscarsCount = movieDeque.stream().mapToLong(Movie::getOscarsCount).sum();
-        return "Количество всех Оскаров у всех фильмов коллекции - " + sumOfOscarsCount + ".\n";
-    }
-
-    public String addElement(Movie movie) {
+    public String addElement(Queue<String> attributes) {
+        Movie movie = EntityManager.constructMovie(attributes);
         if (movieDeque.isEmpty()) {
             initDate = LocalDate.parse(movie.getCreationDate());
         }
+        return addElement(movie);
+    }
+
+    public String addElement(Movie movie) {
         movieDeque.add(movie);
         return "Следующий элемент был добавлен в коллекцию:\n" + movie + "\n";
     }
 
-    public String addIfMin(Movie movie) {
+    public String addIfMin(Queue<String> attributes) {
         if (movieDeque.isEmpty()) {
-            return addElement(movie);
+            return addElement(attributes);
         }
+        Movie movie = EntityManager.constructMovie(attributes);
         Movie minMovie = movieDeque.stream().min(Movie::compareTo).orElseThrow();
         if (movie.compareTo(minMovie) < 0) {
             return addElement(movie);
         }
         return "Данный элемент не был добавлен в коллекцию, " +
                 "так как он больше либо равен одному из уже добавленных элементов.\n";
-    }
-
-    public String countGreaterThanGenre(MovieGenre genre) {
-        long count = movieDeque.stream().filter(m -> m.getGenre().compareTo(genre) > 0).count();
-        return count == 0 ? "В коллекции не нашлось подходящих элементов\n" : "Подходящих элементов: " + count + ".\n";
-    }
-
-    public String groupCountingByGenre() {
-        if (movieDeque.isEmpty()) {
-            return "Пока что коллекция пуста.\n";
-        }
-        StringBuilder sb = new StringBuilder();
-        for (MovieGenre targetGenre : MovieGenre.values()) {
-            long count = movieDeque.stream().filter(m -> m.getGenre() == targetGenre).count();
-            sb.append("Фильмов в жанре ").append(targetGenre).append(count == 0 ? " нет.\n" : ": " + count);
-        }
-        return sb.toString();
     }
 
     public String removeIfGreater(Movie movie) {
