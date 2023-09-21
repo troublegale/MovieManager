@@ -1,5 +1,8 @@
 package letsgo.lab6.server.entities;
 
+import jakarta.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Location {
 
     private Long z;
@@ -7,10 +10,17 @@ public class Location {
     private Float x;
     private String name; //Длина строки не должна быть больше 870, Поле не может быть null
 
-    public Location(Float x, Float y, Long z) {
+    public Location() {
+
+    }
+
+
+
+    public Location(Float x, Float y, Long z, String name) {
         this.x = x;
         this.y = y;
         this.z = z;
+        this.name = name;
     }
 
     public Long getZ() {

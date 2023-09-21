@@ -16,10 +16,8 @@ public class Info implements Command {
     @Override
     public String execute(String argument) {
         Deque<Movie> movieDeque = collectionManager.getMovieDeque();
-        LocalDate initDate = collectionManager.getInitDate();
         StringBuilder sb = new StringBuilder();
         sb.append("Фильмы хранятся в коллекции ").append(movieDeque.getClass()).append(".\n");
-        sb.append("Дата инициализации коллекции - ").append(initDate).append(".\n");
         if (movieDeque.isEmpty()) {
             sb.append("Пока что коллекция пуста.\n");
         } else {

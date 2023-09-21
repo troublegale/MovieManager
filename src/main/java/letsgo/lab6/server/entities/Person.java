@@ -1,15 +1,24 @@
 package letsgo.lab6.server.entities;
 
+import jakarta.xml.bind.annotation.XmlRootElement;
 import letsgo.lab6.common.enums.Color;
 import letsgo.lab6.common.enums.Country;
 
+@XmlRootElement
 public class Person {
 
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Long height; //Поле может быть null, Значение поля должно быть больше 0
+
     private Color eyeColor; //Поле не может быть null
+
     private Country nationality; //Поле не может быть null
+
     private Location location; //Поле не может быть null
+
+    public Person() {
+
+    }
 
     public Person(String name, Long height, Color eyeColor, Country nationality, Location location) {
         this.name = name;

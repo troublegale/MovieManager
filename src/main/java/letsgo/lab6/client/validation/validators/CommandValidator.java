@@ -26,7 +26,7 @@ public class CommandValidator {
         commandConstraintsMap.put("remove_if_greater", new ArgumentConstraints());
         commandConstraintsMap.put("show", new ArgumentConstraints());
         commandConstraintsMap.put("sum_of_oscars_count", new ArgumentConstraints());
-        commandConstraintsMap.put("update", new ArgumentConstraints(DataType.LONG, true));
+        commandConstraintsMap.put("update", new ArgumentConstraints(DataType.LONG, false,  true, true));
     }
 
     public static ValidationResult validateCommand(String[] inputWords) {
@@ -62,7 +62,12 @@ public class CommandValidator {
         switch (constraints.getDataType()) {
             case LONG -> {
                 try {
-                    return new ValidationResult(true, String.valueOf(Long.parseLong(inputWords[1])),
+                    long test = Long.parseLong(inputWords[1]);
+                    if (constraints.isPositive() && test < 0) {
+                        return new ValidationResult(false, "Аргумент команды " + inputWords[0] + " должен" +
+                                "быть положительным!", false);
+                    }
+                    return new ValidationResult(true, String.valueOf(test),
                             constraints.isFurtherInputRequired());
                 } catch (NumberFormatException e) {
                     String message = "Неверный тип аргумента для команды '" + inputWords[0] + "'. " +

@@ -1,9 +1,18 @@
 package letsgo.lab6.server.entities;
 
+import jakarta.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Coordinates {
     private Double x;
 
     private Float y; //Поле не может быть null
+
+    public Coordinates() {
+
+    }
+
+
 
     public Coordinates(Double x, Float y) {
         this.x = x;

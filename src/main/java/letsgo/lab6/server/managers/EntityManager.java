@@ -54,7 +54,8 @@ public class EntityManager {
         Float x = Float.parseFloat(Objects.requireNonNull(attributes.poll()));
         Float y = Float.parseFloat(Objects.requireNonNull(attributes.poll()));
         Long z = Long.parseLong(Objects.requireNonNull(attributes.poll()));
-        return new Location(x, y, z);
+        String name = attributes.poll();
+        return new Location(x, y, z, name);
     }
 
     public static void setNextID(Long newNextID) {

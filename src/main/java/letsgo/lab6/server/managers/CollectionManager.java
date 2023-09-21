@@ -1,29 +1,37 @@
 package letsgo.lab6.server.managers;
 
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import letsgo.lab6.server.entities.Movie;
 
-import java.time.LocalDate;
 import java.util.Deque;
 import java.util.Objects;
 import java.util.Queue;
 
+@XmlType(name = "collection")
+@XmlRootElement
 public class CollectionManager {
 
-    private final Deque<Movie> movieDeque;
-    private LocalDate initDate;
+    private Deque<Movie> movieDeque;
 
-    public CollectionManager(Deque<Movie> movieDeque, LocalDate initDate) {
+
+    public CollectionManager() {
+
+    }
+
+
+    public CollectionManager(Deque<Movie> movieDeque) {
         this.movieDeque = movieDeque;
-        this.initDate = initDate;
+    }
+
+    public void setMovieDeque(Deque<Movie> movieDeque) {
+        this.movieDeque = movieDeque;
     }
 
     public Deque<Movie> getMovieDeque() {
         return movieDeque;
     }
 
-    public LocalDate getInitDate() {
-        return initDate;
-    }
 
     public String clearCollection() {
         if (movieDeque.isEmpty()) {
@@ -60,9 +68,6 @@ public class CollectionManager {
 
     public String addElement(Queue<String> attributes) {
         Movie movie = EntityManager.constructMovie(attributes);
-        if (movieDeque.isEmpty()) {
-            initDate = LocalDate.parse(movie.getCreationDate());
-        }
         return addElement(movie);
     }
 

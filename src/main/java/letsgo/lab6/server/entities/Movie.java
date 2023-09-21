@@ -1,18 +1,31 @@
 package letsgo.lab6.server.entities;
 
+import jakarta.xml.bind.annotation.XmlRootElement;
 import letsgo.lab6.common.enums.MovieGenre;
 import letsgo.lab6.common.enums.MpaaRating;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
+
+@XmlRootElement
 public class Movie implements Comparable<Movie> {
 
     private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
+
     private Coordinates coordinates; //Поле не может быть null
     private String creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
     private Long oscarsCount; //Значение поля должно быть больше 0, Поле не может быть null
+
     private MovieGenre genre; //Поле не может быть null
+
     private MpaaRating mpaaRating; //Поле может быть null
+
     private Person operator; //Поле не может быть null
+
+    public Movie() {
+
+    }
 
     public Movie(Long id, String creationDate, String name, Coordinates coordinates,
                  MovieGenre genre, MpaaRating mpaaRating, Long oscarsCount, Person operator) {
@@ -101,5 +114,19 @@ public class Movie implements Comparable<Movie> {
     @Override
     public int compareTo(Movie movie) {
         return Long.compare(this.getOscarsCount(), movie.getOscarsCount());
+    }
+
+    public boolean allFieldsValid() {
+        try {
+            return (id > 0 && !name.isBlank() && coordinates.getY() != null &&
+                    (LocalDate.parse(creationDate).isBefore(LocalDate.now()) ||
+                            LocalDate.parse(creationDate).equals(LocalDate.now())) &&
+                    oscarsCount > 0 && genre != null && !operator.getName().isBlank() &&
+                    (operator.getHeight() == null || operator.getHeight() > 0) &&
+                    operator.getEyeColor() != null && operator.getNationality() != null &&
+                    operator.getLocation().getName().length() <= 870);
+        } catch (NullPointerException | DateTimeParseException e) {
+            return false;
+        }
     }
 }
