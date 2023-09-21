@@ -4,23 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b44efd9-b455-4b29-b81c-ea25e539375e" name="Changes" comment="validation &amp; full i/o ready">
-      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/ServerConsole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/movies.xml" afterDir="false" />
+    <list default="true" id="8b44efd9-b455-4b29-b81c-ea25e539375e" name="Changes" comment="xml done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jar/lab6client-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/lab6client-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jar/lab6server-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/lab6server-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/constraints/ArgumentConstraints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/constraints/ArgumentConstraints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/validators/CommandValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/validators/CommandValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/ClientMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/TCPClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/TCPClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/io/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/io/Console.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/ServerMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CollectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/TCPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/TCPServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Help.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CommandManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/EntityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/EntityManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/FileManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +86,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pathVariables&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -100,7 +95,7 @@
     ]
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.Fergie-Lab6 [serverBuild]">
     <configuration name="Fergie-Lab6 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -198,6 +193,8 @@
       <workItem from="1695304909286" duration="6329000" />
       <workItem from="1695311255375" duration="112000" />
       <workItem from="1695311388795" duration="2627000" />
+      <workItem from="1695319766015" duration="5956000" />
+      <workItem from="1695328206618" duration="1665000" />
     </task>
     <task id="LOCAL-00001" summary="setup">
       <option name="closed" value="true" />
@@ -287,7 +284,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695241217409</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="xml done">
+      <option name="closed" value="true" />
+      <created>1695319883605</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1695319883605</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,17 +311,7 @@
     <MESSAGE value="filled Constraints maps, split validator into Command &amp; Attributes, returned Command to an Interface" />
     <MESSAGE value="literally deleted 2 rows" />
     <MESSAGE value="validation &amp; full i/o ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="validation &amp; full i/o ready" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/Movie.java</url>
-          <line>119</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="xml done" />
+    <option name="LAST_COMMIT_MESSAGE" value="xml done" />
   </component>
 </project>

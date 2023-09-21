@@ -14,7 +14,7 @@ public class Help implements Command {
         StringBuilder sb = new StringBuilder();
         commandMap.forEach((k, v) -> sb.append(k)
                 .append(v.getArgumentRequirement() == null ? "" : " " + v.getArgumentRequirement())
-                .append(" - ").append(v.getDescription()));
+                .append(" - ").append(v.getDescription()).append("\n"));
         return sb.toString();
     }
 

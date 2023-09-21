@@ -26,8 +26,8 @@ public class EntityManager {
 
     public static Movie constructMovie(Long id, String creationDate, Queue<String> attributes) {
         String name = attributes.poll();
-        MovieGenre genre = MovieGenre.valueOf(attributes.poll());
-        MpaaRating rating = MpaaRating.valueOf(attributes.poll());
+        MovieGenre genre = MovieGenre.valueOf(Objects.requireNonNull(attributes.poll()).toUpperCase());
+        MpaaRating rating = MpaaRating.valueOf(Objects.requireNonNull(attributes.poll()).toUpperCase());
         Long oscarsCount = Long.parseLong(Objects.requireNonNull(attributes.poll()));
         Coordinates coordinates = constructCoordinates(attributes);
         Person operator = constructOperator(attributes);
@@ -44,8 +44,8 @@ public class EntityManager {
     private static Person constructOperator(Queue<String> attributes) {
         String name = attributes.poll();
         Long height = Long.parseLong(Objects.requireNonNull(attributes.poll()));
-        Color eyeColor = Color.valueOf(attributes.poll());
-        Country nationality = Country.valueOf(attributes.poll());
+        Color eyeColor = Color.valueOf(Objects.requireNonNull(attributes.poll()).toUpperCase());
+        Country nationality = Country.valueOf(Objects.requireNonNull(attributes.poll()).toUpperCase());
         Location location = constructLocation(attributes);
         return new Person(name, height, eyeColor, nationality, location);
     }

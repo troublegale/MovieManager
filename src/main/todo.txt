@@ -1,10 +1,4 @@
 TODO: complete all these steps
 
-logic for the serialization & deserialization process
-
-implement the TCP connection establishment
-
-logic for Request sending (client) & receiving (server), Response sending (server) & receiving (client)
-
-XML parsing for the collection & saving collection into XML
-
+entity constructing: nullable fields should be checked if they're empty
+to initialize them with null if so

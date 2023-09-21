@@ -16,7 +16,7 @@ public class CommandManager {
         commandMap.put("clear", new Clear(collectionManager));
         commandMap.put("count_greater_than_genre", new CountGreaterThanGenre(collectionManager));
         commandMap.put("execute_script", new ExecuteScript(collectionManager));
-        commandMap.put("group_counting_by_id", new GroupCountingByGenre(collectionManager));
+        commandMap.put("group_counting_by_genre", new GroupCountingByGenre(collectionManager));
         commandMap.put("info", new Info(collectionManager));
         commandMap.put("remove_by_id", new RemoveByID(collectionManager));
         commandMap.put("remove_head", new RemoveHead(collectionManager));

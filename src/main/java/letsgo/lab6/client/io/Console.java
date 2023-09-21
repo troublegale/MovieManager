@@ -1,5 +1,6 @@
 package letsgo.lab6.client.io;
 
+import java.io.IOException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -38,6 +39,11 @@ public class Console {
             }
         } catch (NoSuchElementException e) {
             System.out.println("До свидания!");
+            try {
+                client.disconnect();
+            } catch (IOException ex) {
+                System.out.println("Ошибка при прерывании соединения.");
+            }
         }
     }
 
@@ -62,7 +68,10 @@ public class Console {
                         argument = validationResult.message();
                     }
                     request = new Request(inputWords[0].toLowerCase(), argument);
-                    System.out.println(getResponseForRequest(request));
+                    String responseMessage = getResponseForRequest(request);
+                    if (responseMessage != null) {
+                        System.out.println(responseMessage);
+                    }
                 } catch (NoSuchElementException e) {
                     System.out.println("Отмена.");
                 }
@@ -71,8 +80,15 @@ public class Console {
     }
 
     private String getResponseForRequest(Request request) {
-        Response response = client.communicateWithServer(request);
-        return response.message();
+        try {
+            Response response = client.communicateWithServer(request);
+            return response.message();
+        } catch (IOException e) {
+            System.out.println("Ошибка при отправке запроса на сервер. Попробуйте еще раз.");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Неизвестная ошибка. Попробуйте еще раз.");
+        }
+        return null;
     }
 
 }
