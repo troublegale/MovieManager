@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b44efd9-b455-4b29-b81c-ea25e539375e" name="Changes" comment="fixes in EntityManager; added server i/o">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="8b44efd9-b455-4b29-b81c-ea25e539375e" name="Changes" comment="fixes in EntityManager; added server i/o (some error occurred so same commit)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/exceptions/InvalidScriptException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/exceptions/ScriptRecursionException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/validators/ScriptValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jar/lab6client-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/lab6client-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jar/lab6server-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/lab6server-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/io/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/io/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/ServerConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/ServerConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/movies.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/movies.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/DataType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/DataType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/validators/AttributesValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/validators/AttributesValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/validators/CommandValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/validators/CommandValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/ExecuteScript.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CommandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +97,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Gradle.Fergie-Lab6 [serverBuild]">
+  <component name="RunManager" selected="Gradle.Fergie-Lab6 [clientBuild]">
     <configuration name="Fergie-Lab6 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -159,8 +166,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Fergie-Lab6 [serverBuild]" />
         <item itemvalue="Gradle.Fergie-Lab6 [clientBuild]" />
+        <item itemvalue="Gradle.Fergie-Lab6 [serverBuild]" />
         <item itemvalue="Gradle.Fergie-Lab6 [build]" />
       </list>
     </recent_temporary>
@@ -193,6 +200,7 @@
       <workItem from="1695394114101" duration="5516000" />
       <workItem from="1695401273875" duration="199000" />
       <workItem from="1695401528680" duration="2000" />
+      <workItem from="1695401546616" duration="4725000" />
     </task>
     <task id="LOCAL-00001" summary="setup">
       <option name="closed" value="true" />
@@ -306,7 +314,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695401213162</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fixes in EntityManager; added server i/o (some error occurred so same commit)">
+      <option name="closed" value="true" />
+      <created>1695401633041</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1695401633042</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,6 +344,7 @@
     <MESSAGE value="xml done" />
     <MESSAGE value="tcp connection" />
     <MESSAGE value="fixes in EntityManager; added server i/o" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes in EntityManager; added server i/o" />
+    <MESSAGE value="fixes in EntityManager; added server i/o (some error occurred so same commit)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes in EntityManager; added server i/o (some error occurred so same commit)" />
   </component>
 </project>

@@ -5,6 +5,8 @@ import letsgo.lab6.client.validation.ValidationResult;
 import letsgo.lab6.client.validation.constraints.ArgumentConstraints;
 import letsgo.lab6.common.enums.MovieGenre;
 
+import java.io.File;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,6 +21,7 @@ public class CommandValidator {
         commandConstraintsMap.put("count_greater_than_genre", new ArgumentConstraints(DataType.MOVIE_GENRE));
         commandConstraintsMap.put("exit", new ArgumentConstraints());
         commandConstraintsMap.put("group_counting_by_genre", new ArgumentConstraints());
+        commandConstraintsMap.put("execute_script", new ArgumentConstraints(DataType.FILE_PATH));
         commandConstraintsMap.put("help", new ArgumentConstraints());
         commandConstraintsMap.put("info", new ArgumentConstraints());
         commandConstraintsMap.put("remove_by_id", new ArgumentConstraints(DataType.LONG));
@@ -82,6 +85,19 @@ public class CommandValidator {
                 } catch (IllegalArgumentException e) {
                     String message = "Неверный тип аргумента для команды '" + inputWords[0] + "'." +
                             "Требуется MovieGenre(ACTION, DRAMA, TRAGEDY).";
+                    return new ValidationResult(false, message, false);
+                }
+            }
+            case FILE_PATH -> {
+                try {
+                    String test = inputWords[1];
+                    File file = new File(test).getAbsoluteFile();
+                    if (file.exists()) {
+                        return new ValidationResult(true, "", false);
+                    }
+                    return new ValidationResult(false, "Файла " + test + " не существует", false);
+                } catch (Exception e) {
+                    String message = "Такого файла не существует, или возникла ошибка при попытке доступа к файлу.";
                     return new ValidationResult(false, message, false);
                 }
             }

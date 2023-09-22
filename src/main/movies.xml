@@ -37,4 +37,25 @@
         </operator>
         <oscarsCount>2</oscarsCount>
     </movies>
+    <movies>
+        <coordinates>
+            <x>12.0</x>
+            <y>32.0</y>
+        </coordinates>
+        <creationDate>2023-09-22</creationDate>
+        <genre>ACTION</genre>
+        <id>2</id>
+        <mpaaRating>PG</mpaaRating>
+        <name>movie name</name>
+        <operator>
+            <eyeColor>GREEN</eyeColor>
+            <location>
+                <name>loc name</name>
+                <y>2.0</y>
+            </location>
+            <name>oper name</name>
+            <nationality>VATICAN</nationality>
+        </operator>
+        <oscarsCount>12</oscarsCount>
+    </movies>
 </collection>

@@ -1,12 +1,16 @@
 package letsgo.lab6.client.io;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 import letsgo.lab6.client.TCPClient;
+import letsgo.lab6.client.validation.exceptions.InvalidScriptException;
+import letsgo.lab6.client.validation.exceptions.ScriptRecursionException;
 import letsgo.lab6.client.validation.validators.CommandValidator;
 import letsgo.lab6.client.validation.ValidationResult;
+import letsgo.lab6.client.validation.validators.ScriptValidator;
 import letsgo.lab6.common.network.Request;
 import letsgo.lab6.common.network.Response;
 
@@ -58,6 +62,26 @@ public class Console {
                 System.out.println(validationResult.message());
             } else {
                 try {
+                    if (inputWords[0].equalsIgnoreCase("execute_script")) {
+                        try {
+                            String script = new ScriptValidator(inputWords[1]).getFinalScript();
+                            Request request = new Request(inputWords[0], script);
+                            String responseMessage = getResponseForRequest(request);
+                            if (responseMessage != null) {
+                                System.out.println(responseMessage);
+                            }
+                            return;
+                        } catch (FileNotFoundException e) {
+                            System.out.println("Возникла ошибка с файлом.");
+                            return;
+                        } catch (InvalidScriptException e) {
+                            System.out.println("Файл скрипта не валиден.");
+                            return;
+                        } catch (ScriptRecursionException e) {
+                            System.out.println("В скрипте обнаружена рекурсивные вызовы. Скрипт не валиден.");
+                            return;
+                        }
+                    }
                     Request request;
                     String argument;
                     if (validationResult.furtherInputRequired()) {

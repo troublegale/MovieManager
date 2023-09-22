@@ -9,6 +9,7 @@ public enum DataType {
     MPAA_RATING,
     COLOR,
     COUNTRY,
-    STRING
+    STRING,
+    FILE_PATH
 
 }

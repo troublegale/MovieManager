@@ -80,7 +80,7 @@ public class AttributesValidator {
     }
 
     public static ValidationResult validateAttribute(String attribute, AttributeConstraints constraints) {
-        if (!checkArgumentPresence(attribute, constraints.isNullable())) {
+        if (!checkAttributePresence(attribute, constraints.isNullable())) {
             return new ValidationResult(false, constraints.getNoArgumentMessage(), false);
         } else if (attribute.isBlank()) {
             return new ValidationResult(true, "\n", false);
@@ -88,7 +88,7 @@ public class AttributesValidator {
         return checkAttributeValue(attribute, constraints);
     }
 
-    private static boolean checkArgumentPresence(String attribute, boolean nullable) {
+    private static boolean checkAttributePresence(String attribute, boolean nullable) {
         if (attribute.isBlank()) {
             return nullable;
         }
