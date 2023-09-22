@@ -4,20 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b44efd9-b455-4b29-b81c-ea25e539375e" name="Changes" comment="fixes in EntityManager; added server i/o (some error occurred so same commit)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/exceptions/InvalidScriptException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/exceptions/ScriptRecursionException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/validators/ScriptValidator.java" afterDir="false" />
+    <list default="true" id="8b44efd9-b455-4b29-b81c-ea25e539375e" name="Changes" comment="final fixes">
+      <change afterPath="$PROJECT_DIR$/src/main/script2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jar/lab6client-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/lab6client-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jar/lab6server-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/lab6server-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/io/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/io/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/DataType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/DataType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/validators/AttributesValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/validators/AttributesValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/validators/CommandValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/validation/validators/CommandValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/ExecuteScript.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CommandManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/ClientMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/ServerMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/script" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/movies.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/movies.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/todo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,33 +65,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;jbr-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;K:/Dev/jdk-21&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pathVariables&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "jbr-17",
+    "last_opened_file_path": "K:/Dev/jdk-21",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "vcs.Git",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;JAVA&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "JAVA"
     ]
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="K:\Dev\Projects\Fergie-Lab6\src\main" />
+    </key>
+  </component>
   <component name="RunManager" selected="Gradle.Fergie-Lab6 [clientBuild]">
     <configuration name="Fergie-Lab6 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -200,7 +200,8 @@
       <workItem from="1695394114101" duration="5516000" />
       <workItem from="1695401273875" duration="199000" />
       <workItem from="1695401528680" duration="2000" />
-      <workItem from="1695401546616" duration="4725000" />
+      <workItem from="1695401546616" duration="4849000" />
+      <workItem from="1695406444215" duration="2376000" />
     </task>
     <task id="LOCAL-00001" summary="setup">
       <option name="closed" value="true" />
@@ -322,11 +323,30 @@
       <option name="project" value="LOCAL" />
       <updated>1695401633042</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="execute_script ready">
+      <option name="closed" value="true" />
+      <created>1695406347242</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1695406347242</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -345,6 +365,8 @@
     <MESSAGE value="tcp connection" />
     <MESSAGE value="fixes in EntityManager; added server i/o" />
     <MESSAGE value="fixes in EntityManager; added server i/o (some error occurred so same commit)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes in EntityManager; added server i/o (some error occurred so same commit)" />
+    <MESSAGE value="execute_script ready" />
+    <MESSAGE value="final fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="final fixes" />
   </component>
 </project>

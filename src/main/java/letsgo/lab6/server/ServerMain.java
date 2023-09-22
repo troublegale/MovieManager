@@ -17,10 +17,10 @@ public class ServerMain {
             System.exit(1);
         }
         FileManager.setFilePath(filePath);
-        int port = 5928;
+        int port = 2222;
         collectionManager = FileManager.readCollectionFromFile();
         Runtime.getRuntime().addShutdownHook(new Thread(ServerMain::exit));
-        EntityManager.setNextID(collectionManager.getMaxID());
+        EntityManager.setNextID(collectionManager.getMaxID() + 1);
         TCPServer server = new TCPServer(port, collectionManager);
         try {
             server.run();

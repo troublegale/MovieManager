@@ -6,55 +6,33 @@
         </coordinates>
         <creationDate>2023-09-22</creationDate>
         <genre>DRAMA</genre>
-        <id>1</id>
-        <name>qasdf</name>
+        <id>2</id>
+        <name>asd</name>
         <operator>
-            <eyeColor>RED</eyeColor>
+            <eyeColor>GREEN</eyeColor>
             <location>
-                <name>asd</name>
+                <name>13</name>
             </location>
             <name>ads</name>
             <nationality>VATICAN</nationality>
         </operator>
-        <oscarsCount>2</oscarsCount>
+        <oscarsCount>1</oscarsCount>
     </movies>
     <movies>
         <coordinates>
-            <y>6.0</y>
-        </coordinates>
-        <creationDate>2023-09-22</creationDate>
-        <genre>TRAGEDY</genre>
-        <id>2</id>
-        <name>afsgd</name>
-        <operator>
-            <eyeColor>GREEN</eyeColor>
-            <location>
-                <name>fuck</name>
-                <y>2.0</y>
-            </location>
-            <name>asgfbdn</name>
-            <nationality>NORTH_KOREA</nationality>
-        </operator>
-        <oscarsCount>2</oscarsCount>
-    </movies>
-    <movies>
-        <coordinates>
-            <x>12.0</x>
-            <y>32.0</y>
+            <y>2.0</y>
         </coordinates>
         <creationDate>2023-09-22</creationDate>
         <genre>ACTION</genre>
-        <id>2</id>
-        <mpaaRating>PG</mpaaRating>
-        <name>movie name</name>
+        <id>3</id>
+        <name>ads</name>
         <operator>
             <eyeColor>GREEN</eyeColor>
             <location>
-                <name>loc name</name>
-                <y>2.0</y>
+                <name>12</name>
             </location>
-            <name>oper name</name>
-            <nationality>VATICAN</nationality>
+            <name>ads</name>
+            <nationality>THAILAND</nationality>
         </operator>
         <oscarsCount>12</oscarsCount>
     </movies>
