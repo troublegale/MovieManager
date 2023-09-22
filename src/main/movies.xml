@@ -1,2 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<collectionManager/>
+<collection>
+    <movies>
+        <coordinates>
+            <y>2.0</y>
+        </coordinates>
+        <creationDate>2023-09-22</creationDate>
+        <genre>DRAMA</genre>
+        <id>1</id>
+        <name>qasdf</name>
+        <operator>
+            <eyeColor>RED</eyeColor>
+            <location>
+                <name>asd</name>
+            </location>
+            <name>ads</name>
+            <nationality>VATICAN</nationality>
+        </operator>
+        <oscarsCount>2</oscarsCount>
+    </movies>
+    <movies>
+        <coordinates>
+            <y>6.0</y>
+        </coordinates>
+        <creationDate>2023-09-22</creationDate>
+        <genre>TRAGEDY</genre>
+        <id>2</id>
+        <name>afsgd</name>
+        <operator>
+            <eyeColor>GREEN</eyeColor>
+            <location>
+                <name>fuck</name>
+                <y>2.0</y>
+            </location>
+            <name>asgfbdn</name>
+            <nationality>NORTH_KOREA</nationality>
+        </operator>
+        <oscarsCount>2</oscarsCount>
+    </movies>
+</collection>

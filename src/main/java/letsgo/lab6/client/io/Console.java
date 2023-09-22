@@ -35,7 +35,6 @@ public class Console {
             while (true) {
                 System.out.print("$ ");
                 handleInput();
-                System.out.println();
             }
         } catch (NoSuchElementException e) {
             System.out.println("До свидания!");

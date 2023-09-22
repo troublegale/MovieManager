@@ -44,6 +44,4 @@ public class ServerConsole {
         return false;
     }
 
-
-
 }
