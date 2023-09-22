@@ -33,10 +33,11 @@ public class FileManager {
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             PrintWriter fileOutput = new PrintWriter(filePath);
             marshaller.marshal(collectionManager, fileOutput);
+            System.out.println("Коллекция сохранена в файл.");
 
         } catch (JAXBException | IOException e) {
             System.out.println("Не удалось сохранить коллекцию в файл.");
-            e.printStackTrace();
+            e.getMessage();
         }
     }
 
@@ -74,7 +75,7 @@ public class FileManager {
 
         } catch (JAXBException | IOException e) {
             System.out.println("Не удалось прочитать коллекцию из файла.");
-            e.printStackTrace();
+            e.getMessage();
             System.out.println("Выход из программы.");
             System.exit(1);
             return null;

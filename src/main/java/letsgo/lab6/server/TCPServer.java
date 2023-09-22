@@ -15,21 +15,23 @@ public class TCPServer {
 
     private final int port;
     private final CommandManager commandManager;
+    private final ServerConsole console;
 
     public TCPServer(int port, CollectionManager collectionManager) {
         this.port = port;
+        this.console = new ServerConsole(collectionManager);
         commandManager = new CommandManager(collectionManager);
     }
 
-    public void start() {
+    public void run() {
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             System.out.println("Сервер запущен.");
-            while (true) {
+            do {
                 Socket clientSocket = serverSocket.accept();
                 ObjectInputStream objectInputStream = new ObjectInputStream(clientSocket.getInputStream());
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(clientSocket.getOutputStream());
                 handleClient(objectInputStream, objectOutputStream);
-            }
+            } while (!console.handleServerInput());
         } catch (IOException e) {
             System.out.println("Ошибка при открытии сетевого канала.");
             System.exit(1);
@@ -42,11 +44,13 @@ public class TCPServer {
     private void handleClient(ObjectInputStream objectInputStream,
                               ObjectOutputStream objectOutputStream) throws IOException, ClassNotFoundException {
         Request request = (Request) objectInputStream.readObject();
-        System.out.println("Received request: " + request.commandName() + " " + request.argument());
+        System.out.println("Получен запрос: " + request.commandName() + " " +
+                (request.argument() == null ? "" : request.argument()) + "\n");
         String responseMessage = commandManager.execute(request.commandName(), request.argument());
         Response response = new Response(responseMessage);
         objectOutputStream.writeObject(response);
         objectOutputStream.flush();
-        System.out.println("Sent response: " + responseMessage);
+        System.out.println("Отправлен ответ: " + responseMessage);
     }
+
 }

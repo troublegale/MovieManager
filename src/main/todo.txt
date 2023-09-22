@@ -1,4 +1,7 @@
 TODO: complete all these steps
 
-entity constructing: nullable fields should be checked if they're empty
-to initialize them with null if so
+execute_script!!!
+
+script validation on client
+
+script execution on server

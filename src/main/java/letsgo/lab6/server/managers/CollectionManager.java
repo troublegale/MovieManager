@@ -1,37 +1,33 @@
 package letsgo.lab6.server.managers;
 
+import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 import letsgo.lab6.server.entities.Movie;
 
-import java.util.Deque;
-import java.util.Objects;
-import java.util.Queue;
+import java.util.*;
 
-@XmlType(name = "collection")
-@XmlRootElement
+@XmlRootElement(name = "collection")
 public class CollectionManager {
 
-    private Deque<Movie> movieDeque;
-
+    @XmlElement(name = "movies")
+    private ArrayDeque<Movie> movieDeque;
 
     public CollectionManager() {
 
     }
 
-
-    public CollectionManager(Deque<Movie> movieDeque) {
+    public CollectionManager(ArrayDeque<Movie> movieDeque) {
         this.movieDeque = movieDeque;
     }
 
-    public void setMovieDeque(Deque<Movie> movieDeque) {
+    public void setMovieDeque(ArrayDeque<Movie> movieDeque) {
         this.movieDeque = movieDeque;
     }
 
     public Deque<Movie> getMovieDeque() {
         return movieDeque;
     }
-
 
     public String clearCollection() {
         if (movieDeque.isEmpty()) {
@@ -108,10 +104,23 @@ public class CollectionManager {
         if (oldMovie == null) {
             return "В коллекции нет элемента с таким id.\n";
         }
+        movieDeque.remove(oldMovie);
         String creationDate = oldMovie.getCreationDate();
         Movie newMovie = EntityManager.constructMovie(id, creationDate, attributes);
         movieDeque.add(newMovie);
         return "Старый элемент:\n" + oldMovie + "\nБыл заменён на новый:\n" + newMovie + "\n";
+    }
+
+    public Long getMaxID() {
+        try {
+            return movieDeque.stream().mapToLong(Movie::getId).max().orElseThrow();
+        } catch (NoSuchElementException e) {
+            return 1L;
+        }
+    }
+
+    public void save() {
+        FileManager.writeCollectionIntoFile(this);
     }
 
 }

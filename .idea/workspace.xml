@@ -4,18 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b44efd9-b455-4b29-b81c-ea25e539375e" name="Changes" comment="xml done">
+    <list default="true" id="8b44efd9-b455-4b29-b81c-ea25e539375e" name="Changes" comment="tcp connection">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jar/lab6client-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/lab6client-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jar/lab6server-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/lab6server-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/ClientMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/ClientMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/TCPClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/TCPClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/io/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/io/Console.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/ServerConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/ServerConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/ServerMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/TCPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/TCPServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Help.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CommandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CollectionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/EntityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/EntityManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/todo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +192,8 @@
       <workItem from="1695311255375" duration="112000" />
       <workItem from="1695311388795" duration="2627000" />
       <workItem from="1695319766015" duration="5956000" />
-      <workItem from="1695328206618" duration="1665000" />
+      <workItem from="1695328206618" duration="1978000" />
+      <workItem from="1695394114101" duration="4543000" />
     </task>
     <task id="LOCAL-00001" summary="setup">
       <option name="closed" value="true" />
@@ -292,7 +291,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695319883605</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="tcp connection">
+      <option name="closed" value="true" />
+      <created>1695330173957</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1695330173957</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,6 +319,7 @@
     <MESSAGE value="literally deleted 2 rows" />
     <MESSAGE value="validation &amp; full i/o ready" />
     <MESSAGE value="xml done" />
-    <option name="LAST_COMMIT_MESSAGE" value="xml done" />
+    <MESSAGE value="tcp connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="tcp connection" />
   </component>
 </project>
