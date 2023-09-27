@@ -1,7 +1,7 @@
 package letsgo.lab6.server;
 
-import letsgo.lab6.common.network.Request;
-import letsgo.lab6.common.network.Response;
+import letsgo.lab6.common.network.CommandRequest;
+import letsgo.lab6.common.network.CommandResponse;
 import letsgo.lab6.server.managers.CollectionManager;
 import letsgo.lab6.server.managers.CommandManager;
 
@@ -51,12 +51,12 @@ public class TCPServer {
         try (ObjectInputStream objectInputStream = new ObjectInputStream(clientChannel.socket().getInputStream());
              ObjectOutputStream objectOutputStream = new ObjectOutputStream(clientChannel.socket().getOutputStream())) {
 
-            Request request = (Request) objectInputStream.readObject();
-            System.out.println("Получен запрос: " + request.commandName() + " " +
-                    (request.argument() == null ? "" : request.argument()) + "\n");
-            String responseMessage = commandManager.execute(request.commandName(), request.argument());
-            Response response = new Response(responseMessage);
-            objectOutputStream.writeObject(response);
+            CommandRequest commandRequest = (CommandRequest) objectInputStream.readObject();
+            System.out.println("Получен запрос: " + commandRequest.commandName() + " " +
+                    (commandRequest.argument() == null ? "" : commandRequest.argument()) + "\n");
+            String responseMessage = commandManager.execute(commandRequest.commandName(), commandRequest.argument());
+            CommandResponse commandResponse = new CommandResponse(responseMessage);
+            objectOutputStream.writeObject(commandResponse);
             objectOutputStream.flush();
             System.out.println("Отправлен ответ: " + responseMessage);
         }

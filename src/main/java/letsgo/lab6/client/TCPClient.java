@@ -1,7 +1,9 @@
 package letsgo.lab6.client;
 
-import letsgo.lab6.common.network.Request;
-import letsgo.lab6.common.network.Response;
+import letsgo.lab6.common.network.AuthRequest;
+import letsgo.lab6.common.network.AuthResponse;
+import letsgo.lab6.common.network.CommandRequest;
+import letsgo.lab6.common.network.CommandResponse;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -21,22 +23,31 @@ public class TCPClient {
         this.serverPort = serverPort;
     }
 
-    public void connect() throws IOException {
+    private void connect() throws IOException {
         socket = new Socket(serverAddress, serverPort);
         objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
         objectInputStream = new ObjectInputStream(socket.getInputStream());
     }
 
-    public void sendRequest(Request request) throws IOException {
-        objectOutputStream.writeObject(request);
+    private void sendRequest(CommandRequest commandRequest) throws IOException {
+        objectOutputStream.writeObject(commandRequest);
         objectOutputStream.flush();
     }
 
-    public Response receiveResponse() throws IOException, ClassNotFoundException {
-        return (Response) objectInputStream.readObject();
+    private void sendRequest(AuthRequest authRequest) throws IOException {
+        objectOutputStream.writeObject(authRequest);
+        objectOutputStream.flush();
     }
 
-    public void disconnect() throws IOException {
+    private CommandResponse receiveCommandResponse() throws IOException, ClassNotFoundException {
+        return (CommandResponse) objectInputStream.readObject();
+    }
+
+    private AuthResponse receiveAuthResponse() throws IOException, ClassNotFoundException {
+        return (AuthResponse) objectInputStream.readObject();
+    }
+
+    private void disconnect() throws IOException {
         if (objectOutputStream != null) {
             objectOutputStream.close();
         }
@@ -48,12 +59,21 @@ public class TCPClient {
         }
     }
 
-    public Response communicateWithServer(Request request) throws IOException, ClassNotFoundException {
+    public CommandResponse getCommandResponse(CommandRequest commandRequest)
+            throws IOException, ClassNotFoundException {
         connect();
-        sendRequest(request);
-        Response response = receiveResponse();
+        sendRequest(commandRequest);
+        CommandResponse commandResponse = receiveCommandResponse();
         disconnect();
-        return response;
+        return commandResponse;
+    }
+
+    public AuthResponse authorize(AuthRequest authRequest) throws IOException, ClassNotFoundException {
+        connect();
+        sendRequest(authRequest);
+        AuthResponse authResponse = receiveAuthResponse();
+        disconnect();
+        return authResponse;
     }
 
 }
