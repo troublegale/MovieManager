@@ -5,7 +5,7 @@ import letsgo.lab6.client.io.Console;
 public class ClientMain {
 
     public static void main(String[] args) {
-        int port = 2222;
+        int port = 33506;
         TCPClient client = new TCPClient("localhost", port);
         Console console = new Console(client);
         console.start();

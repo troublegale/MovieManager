@@ -2,7 +2,6 @@ package letsgo.lab6.server.managers;
 
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import letsgo.lab6.server.entities.Movie;
 
 import java.util.*;

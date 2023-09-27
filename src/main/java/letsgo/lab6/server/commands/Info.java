@@ -3,7 +3,6 @@ package letsgo.lab6.server.commands;
 import letsgo.lab6.server.entities.Movie;
 import letsgo.lab6.server.managers.CollectionManager;
 
-import java.time.LocalDate;
 import java.util.Deque;
 
 public class Info implements Command {

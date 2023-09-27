@@ -8,8 +8,9 @@ import letsgo.lab6.server.managers.CommandManager;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.net.InetSocketAddress;
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
 
 public class TCPServer {
 
@@ -24,13 +25,18 @@ public class TCPServer {
     }
 
     public void run() {
-        try (ServerSocket serverSocket = new ServerSocket(port)) {
+        try (ServerSocketChannel serverSocketChannel = ServerSocketChannel.open()) {
+            serverSocketChannel.bind(new InetSocketAddress(port));
             System.out.println("Сервер запущен.");
+
             do {
-                Socket clientSocket = serverSocket.accept();
-                ObjectInputStream objectInputStream = new ObjectInputStream(clientSocket.getInputStream());
-                ObjectOutputStream objectOutputStream = new ObjectOutputStream(clientSocket.getOutputStream());
-                handleClient(objectInputStream, objectOutputStream);
+                try (SocketChannel clientChannel = serverSocketChannel.accept()) {
+                    if (clientChannel != null) {
+                        handleClient(clientChannel);
+                    }
+                } catch (IOException e) {
+                    System.out.println("Ошибка при обработке клиента.");
+                }
             } while (!console.handleServerInput());
         } catch (IOException e) {
             System.out.println("Ошибка при открытии сетевого канала.");
@@ -41,16 +47,18 @@ public class TCPServer {
         }
     }
 
-    private void handleClient(ObjectInputStream objectInputStream,
-                              ObjectOutputStream objectOutputStream) throws IOException, ClassNotFoundException {
-        Request request = (Request) objectInputStream.readObject();
-        System.out.println("Получен запрос: " + request.commandName() + " " +
-                (request.argument() == null ? "" : request.argument()) + "\n");
-        String responseMessage = commandManager.execute(request.commandName(), request.argument());
-        Response response = new Response(responseMessage);
-        objectOutputStream.writeObject(response);
-        objectOutputStream.flush();
-        System.out.println("Отправлен ответ: " + responseMessage);
-    }
+    private void handleClient(SocketChannel clientChannel) throws IOException, ClassNotFoundException {
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(clientChannel.socket().getInputStream());
+             ObjectOutputStream objectOutputStream = new ObjectOutputStream(clientChannel.socket().getOutputStream())) {
 
+            Request request = (Request) objectInputStream.readObject();
+            System.out.println("Получен запрос: " + request.commandName() + " " +
+                    (request.argument() == null ? "" : request.argument()) + "\n");
+            String responseMessage = commandManager.execute(request.commandName(), request.argument());
+            Response response = new Response(responseMessage);
+            objectOutputStream.writeObject(response);
+            objectOutputStream.flush();
+            System.out.println("Отправлен ответ: " + responseMessage);
+        }
+    }
 }

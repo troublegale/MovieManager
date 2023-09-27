@@ -17,7 +17,7 @@ public class ServerMain {
             System.exit(1);
         }
         FileManager.setFilePath(filePath);
-        int port = 2222;
+        int port = 33506;
         collectionManager = FileManager.readCollectionFromFile();
         Runtime.getRuntime().addShutdownHook(new Thread(ServerMain::exit));
         EntityManager.setNextID(collectionManager.getMaxID() + 1);

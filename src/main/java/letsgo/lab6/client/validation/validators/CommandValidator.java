@@ -6,7 +6,6 @@ import letsgo.lab6.client.validation.constraints.ArgumentConstraints;
 import letsgo.lab6.common.enums.MovieGenre;
 
 import java.io.File;
-import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,7 +28,7 @@ public class CommandValidator {
         commandConstraintsMap.put("remove_if_greater", new ArgumentConstraints());
         commandConstraintsMap.put("show", new ArgumentConstraints());
         commandConstraintsMap.put("sum_of_oscars_count", new ArgumentConstraints());
-        commandConstraintsMap.put("update", new ArgumentConstraints(DataType.LONG, false,  true, true));
+        commandConstraintsMap.put("update", new ArgumentConstraints(DataType.LONG, false, true, true));
     }
 
     public static ValidationResult validateCommand(String[] inputWords) {

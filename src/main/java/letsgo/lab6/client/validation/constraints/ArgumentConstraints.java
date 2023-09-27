@@ -16,11 +16,6 @@ public class ArgumentConstraints extends Constraints {
         furtherInputRequired = false;
     }
 
-    public ArgumentConstraints(DataType dataType, boolean furtherInputRequired) {
-        super(dataType);
-        this.furtherInputRequired = furtherInputRequired;
-    }
-
     public ArgumentConstraints(boolean furtherInputRequired) {
         super();
         this.furtherInputRequired = furtherInputRequired;

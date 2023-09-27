@@ -9,11 +9,10 @@ import letsgo.lab6.server.entities.Location;
 import letsgo.lab6.server.entities.Movie;
 import letsgo.lab6.server.entities.Person;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringReader;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayDeque;
 import java.util.Scanner;
 
@@ -46,8 +45,8 @@ public class FileManager {
             JAXBContext context = JAXBContext.newInstance(Movie.class, Person.class, Location.class,
                     Coordinates.class, CollectionManager.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
-            Path path = Paths.get(filePath);
-            Scanner scanner = new Scanner(path);
+            File file = new File(filePath).getAbsoluteFile();
+            Scanner scanner = new Scanner(file);
             StringBuilder sb = new StringBuilder();
             while (scanner.hasNextLine()) {
                 sb.append(scanner.nextLine());
@@ -75,7 +74,7 @@ public class FileManager {
 
         } catch (JAXBException | IOException e) {
             System.out.println("Не удалось прочитать коллекцию из файла.");
-            e.getMessage();
+            System.out.println(e.getMessage());
             System.out.println("Выход из программы.");
             System.exit(1);
             return null;

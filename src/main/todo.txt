@@ -1,3 +1,32 @@
 TODO: complete all these steps
 
-сдать
+registration/login on client
+
+password validation with regexp
+
+split request & response into CommandRequest & AuthRequest etc
+
+connect to ITMO database in Idea
+
+jdbc initial stuff (ddl, driver, connection etc)
+
+user database
+
+authentication process on server
+
+entity database (movie person etc)
+
+get rid of env var
+
+get rid of xml
+
+actions on database with jdbc
+
+change ArrayDeque to a synchronized version
+
+synchronized database access (not sure, maybe not required)
+
+split the request handling on server into 3 parts: receiving, executing & sending
+
+make every part complete in a separated thread using:
+CachedThreadPool for receiving, new Thread for executing, CachedThreadPool for sending
