@@ -16,6 +16,7 @@ import java.io.StringReader;
 import java.util.ArrayDeque;
 import java.util.Scanner;
 
+@Deprecated
 public class FileManager {
 
     private static String filePath;
@@ -36,7 +37,7 @@ public class FileManager {
 
         } catch (JAXBException | IOException e) {
             System.out.println("Не удалось сохранить коллекцию в файл.");
-            e.getMessage();
+            System.out.println(e.getMessage());
         }
     }
 

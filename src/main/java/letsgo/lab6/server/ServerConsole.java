@@ -21,7 +21,6 @@ public class ServerConsole {
                 String input = scanner.nextLine().trim();
                 switch (input.toLowerCase()) {
                     case "save" -> {
-                        collectionManager.save();
                         return false;
                     }
                     case "exit" -> {
@@ -37,7 +36,6 @@ public class ServerConsole {
         } catch (IOException e) {
             return false;
         } catch (NoSuchElementException e) {
-            collectionManager.save();
             return true;
         }
         return false;

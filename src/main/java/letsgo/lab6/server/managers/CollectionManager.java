@@ -13,7 +13,6 @@ public class CollectionManager {
     private ArrayDeque<Movie> movieDeque;
 
     public CollectionManager() {
-
     }
 
     public CollectionManager(ArrayDeque<Movie> movieDeque) {
@@ -116,10 +115,6 @@ public class CollectionManager {
         } catch (NoSuchElementException e) {
             return 1L;
         }
-    }
-
-    public void save() {
-        FileManager.writeCollectionIntoFile(this);
     }
 
 }
