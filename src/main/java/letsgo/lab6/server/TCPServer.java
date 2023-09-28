@@ -1,9 +1,12 @@
 package letsgo.lab6.server;
 
+import letsgo.lab6.common.network.AuthRequest;
+import letsgo.lab6.common.network.AuthResponse;
 import letsgo.lab6.common.network.CommandRequest;
 import letsgo.lab6.common.network.CommandResponse;
 import letsgo.lab6.server.managers.CollectionManager;
-import letsgo.lab6.server.managers.CommandManager;
+import letsgo.lab6.server.managers.handlers.CommandManager;
+import letsgo.lab6.server.runnables.Authorizer;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -51,14 +54,16 @@ public class TCPServer {
         try (ObjectInputStream objectInputStream = new ObjectInputStream(clientChannel.socket().getInputStream());
              ObjectOutputStream objectOutputStream = new ObjectOutputStream(clientChannel.socket().getOutputStream())) {
 
-            CommandRequest commandRequest = (CommandRequest) objectInputStream.readObject();
-            System.out.println("Получен запрос: " + commandRequest.commandName() + " " +
-                    (commandRequest.argument() == null ? "" : commandRequest.argument()) + "\n");
-            String responseMessage = commandManager.execute(commandRequest.commandName(), commandRequest.argument());
-            CommandResponse commandResponse = new CommandResponse(responseMessage);
-            objectOutputStream.writeObject(commandResponse);
-            objectOutputStream.flush();
-            System.out.println("Отправлен ответ: " + responseMessage);
+            AuthRequest request = (AuthRequest) objectInputStream.readObject();
+            new Authorizer(request, objectOutputStream).run();
+//            CommandRequest commandRequest = (CommandRequest) objectInputStream.readObject();
+//            System.out.println("Получен запрос: " + commandRequest.commandName() + " " +
+//                    (commandRequest.argument() == null ? "" : commandRequest.argument()) + "\n");
+//            String responseMessage = commandManager.execute(commandRequest.commandName(), commandRequest.argument());
+//            CommandResponse commandResponse = new CommandResponse(responseMessage);
+//            objectOutputStream.writeObject(commandResponse);
+//            objectOutputStream.flush();
+//            System.out.println("Отправлен ответ: " + responseMessage);
         }
     }
 }

@@ -1,9 +1,7 @@
 package letsgo.lab6.server;
 
-import letsgo.lab6.server.database.DatabaseConfiguration;
 import letsgo.lab6.server.managers.CollectionManager;
-import letsgo.lab6.server.managers.EntityManager;
-import letsgo.lab6.server.managers.FileManager;
+import letsgo.lab6.server.managers.databaseManagers.DDLManager;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,8 +13,10 @@ public class ServerMain {
     private static CollectionManager collectionManager;
 
     public static void main(String[] args) {
+
         try {
-            DatabaseConfiguration databaseConfiguration = getDatabaseConfiguration();
+            getDatabaseConfiguration();
+            DDLManager.createTables();
             int port = 33506;
             collectionManager = new CollectionManager();
             TCPServer server = new TCPServer(port, collectionManager);
@@ -28,20 +28,22 @@ public class ServerMain {
             }
         } catch (Exception e) {
             System.out.println("Выход из программы.");
+            e.printStackTrace();
             System.exit(1);
         }
     }
 
 
-    private static DatabaseConfiguration getDatabaseConfiguration() {
+    private static void getDatabaseConfiguration() {
         String credentials = System.getenv("CREDENTIALS");
         if (credentials == null) {
             System.out.println("Не удалось получить данные для доступа к БД, переменная CREDENTIALS не задана.");
             throw new RuntimeException();
         }
         try (Scanner scanner = new Scanner(new File(credentials))) {
-            return new DatabaseConfiguration(
-                    scanner.nextLine().trim(), scanner.nextLine().trim(), scanner.nextLine().trim());
+            DatabaseConfiguration.setDatabaseURL(scanner.nextLine().trim());
+            DatabaseConfiguration.setDatabaseLogin(scanner.nextLine().trim());
+            DatabaseConfiguration.setDatabasePassword(scanner.nextLine().trim());
         } catch (FileNotFoundException e) {
             System.out.println("Не удалось получить данные для доступа к БД из файла.");
             throw new RuntimeException();

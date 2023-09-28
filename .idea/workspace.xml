@@ -4,20 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b44efd9-b455-4b29-b81c-ea25e539375e" name="Changes" comment="registration details on client, Auth &amp; Command requests &amp; responses">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/io/AuthorizationOrganizer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/database/DatabaseConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/databaseManagers/ConnectionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/databaseManagers/DDLManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/databaseManagers/PasswordManager.java" afterDir="false" />
+    <list default="true" id="8b44efd9-b455-4b29-b81c-ea25e539375e" name="Changes" comment="fixes on client &amp; some db managers">
+      <change afterPath="$PROJECT_DIR$/src/main/credentials.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/databaseManagers/dml/DMLManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/databaseManagers/dml/MovieDMLManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/databaseManagers/dml/UserDMLManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/handlers/AuthorizationManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/runnables/Authorizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/84bd87a7-a675-49ec-8966-8abb9ceb9f2d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/84bd87a7-a675-49ec-8966-8abb9ceb9f2d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/84bd87a7-a675-49ec-8966-8abb9ceb9f2d/storage_v2/_src_/database/studs.ww2LBg/schema/s367293.S36GHQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/84bd87a7-a675-49ec-8966-8abb9ceb9f2d/storage_v2/_src_/database/studs.ww2LBg/schema/s367293.S36GHQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jar/lab6client-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/lab6client-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/io/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/client/io/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/ServerConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/ServerConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jar/lab6server-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/lab6server-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/network/AuthRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/network/AuthRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/network/AuthResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/common/network/AuthResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/ServerMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/TCPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/TCPServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/database/DatabaseConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/DatabaseConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/handlers/CommandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/databaseManagers/ConnectionManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/databaseManagers/DDLManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/databaseManagers/DDLManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/movies.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,36 +80,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "jbr-17",
-    "last_opened_file_path": "K:/Dev/Projects/Fergie-Lab6",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "proofread",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;jbr-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;K:/Dev/Projects/Fergie-Lab6&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pathVariables&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "JAVA"
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JAVA&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="K:\Dev\Projects\Fergie-Lab6\src\main" />
@@ -219,7 +229,9 @@
       <workItem from="1695644330593" duration="123000" />
       <workItem from="1695649705058" duration="1000" />
       <workItem from="1695803932365" duration="766000" />
-      <workItem from="1695807347927" duration="11675000" />
+      <workItem from="1695807347927" duration="11796000" />
+      <workItem from="1695884234913" duration="2821000" />
+      <workItem from="1695887659213" duration="4908000" />
     </task>
     <task id="LOCAL-00001" summary="setup">
       <option name="closed" value="true" />
@@ -373,7 +385,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695812895243</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="fixes on client &amp; some db managers">
+      <option name="closed" value="true" />
+      <created>1695825379642</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1695825379642</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,6 +432,22 @@
     <MESSAGE value="tidy up &amp; added SocketChannel to server" />
     <MESSAGE value="some stuff from previous fixes, updated TODO for 7" />
     <MESSAGE value="registration details on client, Auth &amp; Command requests &amp; responses" />
-    <option name="LAST_COMMIT_MESSAGE" value="registration details on client, Auth &amp; Command requests &amp; responses" />
+    <MESSAGE value="fixes on client &amp; some db managers" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes on client &amp; some db managers" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/letsgo/lab6/server/TCPServer.java</url>
+          <line>52</line>
+          <properties class="letsgo.lab6.server.TCPServer" method="handleClient">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

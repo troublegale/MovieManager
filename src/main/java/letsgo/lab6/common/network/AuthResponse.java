@@ -1,4 +1,6 @@
 package letsgo.lab6.common.network;
 
-public record AuthResponse(boolean result, String message) {
+import java.io.Serializable;
+
+public record AuthResponse(boolean result, String message) implements Serializable {
 }
