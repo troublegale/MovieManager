@@ -6,14 +6,12 @@ import java.sql.SQLException;
 
 public class AuthorizationManager {
 
-    private static final UserDMLManager manager = new UserDMLManager();
-
     public static int logIn(String username, String password) {
         try {
-            if (!manager.userIsRegistered(username)) {
+            if (!UserDMLManager.userIsRegistered(username)) {
                 return 1;
             } else {
-                if (!manager.checkPassword(username, password)) {
+                if (!UserDMLManager.checkPassword(username, password)) {
                     return 2;
                 }
             }
@@ -25,10 +23,10 @@ public class AuthorizationManager {
 
     public static int register(String username, String password) {
         try {
-            if (manager.userIsRegistered(username)) {
+            if (UserDMLManager.userIsRegistered(username)) {
                 return 1;
             }
-            manager.insertUser(username, password);
+            UserDMLManager.insertUser(username, password);
             return 0;
         } catch (SQLException e) {
             return 2;

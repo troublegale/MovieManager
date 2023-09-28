@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 public class UserDMLManager extends DMLManager {
 
-    private User getUser(String username) throws SQLException {
+    private static User getUser(String username) throws SQLException {
         Connection connection = getConnection();
         PreparedStatement statement = connection.prepareStatement("select * from users where name = ?;");
         statement.setString(1, username);
@@ -28,7 +28,7 @@ public class UserDMLManager extends DMLManager {
         }
     }
 
-    public void insertUser(String username, String password) throws SQLException {
+    public static void insertUser(String username, String password) throws SQLException {
         Connection connection = getConnection();
         String salt = PasswordManager.getSalt();
         String passwordDigest = PasswordManager.getHash(password, salt);
@@ -41,11 +41,11 @@ public class UserDMLManager extends DMLManager {
         connection.close();
     }
 
-    public boolean userIsRegistered(String username) throws SQLException {
+    public static boolean userIsRegistered(String username) throws SQLException {
         return getUser(username) != null;
     }
 
-    public boolean checkPassword(String username, String password) throws SQLException {
+    public static boolean checkPassword(String username, String password) throws SQLException {
         User realUser = getUser(username);
         if (realUser == null) {
             throw new SQLException();
@@ -54,6 +54,15 @@ public class UserDMLManager extends DMLManager {
         String realSalt = realUser.salt();
         String probablePassword = PasswordManager.getHash(password, realSalt);
         return probablePassword.equals(realPassword);
+    }
+
+    protected static Long getIDByUsername(String username) throws SQLException {
+        Connection connection = getConnection();
+        PreparedStatement statement = connection.prepareStatement("select id from users where name = ?");
+        statement.setString(1, username);
+        ResultSet resultSet = statement.executeQuery();
+        resultSet.next();
+        return resultSet.getLong(1);
     }
 
 }

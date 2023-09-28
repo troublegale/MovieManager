@@ -32,12 +32,12 @@ public class Console {
 
     public void start() {
         AuthorizationOrganizer authorizationOrganizer = new AuthorizationOrganizer(this, client);
-        authorizationOrganizer.authorize();
-        initiateIO();
+        String username = authorizationOrganizer.authorize();
+        initiateIO(username);
     }
 
 
-    private void initiateIO() {
+    private void initiateIO(String username) {
         System.out.println("""
                 Добро пожаловать. Начните вводить команды.
                 Для получения информации о доступных командах используйте 'help'.
@@ -45,7 +45,7 @@ public class Console {
         try {
             while (true) {
                 System.out.print("$ ");
-                handleInput();
+                handleInput(username);
             }
         } catch (NoSuchElementException e) {
             System.out.println("До свидания!");
@@ -53,7 +53,7 @@ public class Console {
         }
     }
 
-    private void handleInput() {
+    private void handleInput(String username) {
         String input = getInput();
         if (input.equalsIgnoreCase("exit")) {
             throw new NoSuchElementException();
@@ -68,7 +68,7 @@ public class Console {
                     if (inputWords[0].equalsIgnoreCase("execute_script")) {
                         try {
                             String script = new ScriptValidator(inputWords[1]).getFinalScript();
-                            CommandRequest commandRequest = new CommandRequest(inputWords[0], script);
+                            CommandRequest commandRequest = new CommandRequest(inputWords[0], script, username);
                             String responseMessage = getResponseForRequest(commandRequest);
                             if (responseMessage != null) {
                                 System.out.println(responseMessage);
@@ -93,7 +93,7 @@ public class Console {
                     } else {
                         argument = validationResult.message();
                     }
-                    commandRequest = new CommandRequest(inputWords[0].toLowerCase(), argument);
+                    commandRequest = new CommandRequest(inputWords[0].toLowerCase(), argument, username);
                     String responseMessage = getResponseForRequest(commandRequest);
                     if (responseMessage != null) {
                         System.out.println(responseMessage);

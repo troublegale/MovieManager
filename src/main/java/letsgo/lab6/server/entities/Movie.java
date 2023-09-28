@@ -1,13 +1,11 @@
 package letsgo.lab6.server.entities;
 
-import jakarta.xml.bind.annotation.XmlRootElement;
 import letsgo.lab6.common.enums.MovieGenre;
 import letsgo.lab6.common.enums.MpaaRating;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
-@XmlRootElement
 public class Movie implements Comparable<Movie> {
 
     private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
@@ -118,13 +116,13 @@ public class Movie implements Comparable<Movie> {
 
     public boolean allFieldsValid() {
         try {
-            return (id > 0 && !name.isBlank() && coordinates.getY() != null &&
+            return (id > 0 && !name.isBlank() && coordinates.y() != null &&
                     (LocalDate.parse(creationDate).isBefore(LocalDate.now()) ||
                             LocalDate.parse(creationDate).equals(LocalDate.now())) &&
-                    oscarsCount > 0 && genre != null && !operator.getName().isBlank() &&
-                    (operator.getHeight() == null || operator.getHeight() > 0) &&
-                    operator.getEyeColor() != null && operator.getNationality() != null &&
-                    operator.getLocation().getName().length() <= 870);
+                    oscarsCount > 0 && genre != null && !operator.name().isBlank() &&
+                    (operator.height() == null || operator.height() > 0) &&
+                    operator.eyeColor() != null && operator.nationality() != null &&
+                    operator.location().name().length() <= 870);
         } catch (NullPointerException | DateTimeParseException e) {
             return false;
         }

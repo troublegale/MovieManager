@@ -12,13 +12,14 @@ public class AuthorizationOrganizer {
 
     private final Console console;
     private final TCPClient client;
+    private String username;
 
     public AuthorizationOrganizer(Console console, TCPClient client) {
         this.console = console;
         this.client = client;
     }
 
-    public void authorize() {
+    public String authorize() {
         boolean auth = false;
         while (!auth) {
             System.out.println("Для использования программы необходимо авторизоваться.\n" +
@@ -40,6 +41,7 @@ public class AuthorizationOrganizer {
                 System.exit(0);
             }
         }
+        return username;
     }
 
     private boolean registerOrLogin(boolean registerOrLogin) {
@@ -82,6 +84,7 @@ public class AuthorizationOrganizer {
             }
             System.out.println("Имя пользователя не может быть пустым!");
         } while (empty);
+        this.username = username;
         return username;
     }
 

@@ -8,17 +8,12 @@ import java.sql.SQLException;
 
 public abstract class DMLManager {
 
-    protected final String databaseURL;
-    protected final String databaseLogin;
-    protected final String databasePassword;
+    protected static final String databaseURL = DatabaseConfiguration.getDatabaseURL();
+    protected static final String databaseLogin = DatabaseConfiguration.getDatabaseLogin();
+    protected static final String databasePassword = DatabaseConfiguration.getDatabasePassword();
 
-    public DMLManager() {
-        databaseURL = DatabaseConfiguration.getDatabaseURL();
-        databaseLogin = DatabaseConfiguration.getDatabaseLogin();
-        databasePassword = DatabaseConfiguration.getDatabasePassword();
-    }
 
-    protected final Connection getConnection() throws SQLException {
+    protected static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(databaseURL, databaseLogin, databasePassword);
     }
 

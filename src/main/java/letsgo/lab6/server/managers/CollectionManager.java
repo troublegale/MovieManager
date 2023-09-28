@@ -1,15 +1,11 @@
 package letsgo.lab6.server.managers;
 
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
 import letsgo.lab6.server.entities.Movie;
 
 import java.util.*;
 
-@XmlRootElement(name = "collection")
 public class CollectionManager {
 
-    @XmlElement(name = "movies")
     private ArrayDeque<Movie> movieDeque;
 
     public CollectionManager() {
