@@ -15,9 +15,9 @@ public class Add implements Command {
     }
 
     @Override
-    public String execute(String argument) {
+    public String execute(String argument, String username) {
         Queue<String> attributes = new ArrayDeque<>(List.of(argument.split("\n")));
-        return collectionManager.addElement(attributes);
+        return collectionManager.addElement(attributes, username);
     }
 
     @Override

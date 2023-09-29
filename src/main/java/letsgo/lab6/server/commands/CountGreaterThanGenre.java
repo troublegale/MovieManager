@@ -15,7 +15,7 @@ public class CountGreaterThanGenre implements Command {
     }
 
     @Override
-    public String execute(String argument) {
+    public String execute(String argument, String username) {
         MovieGenre genre = MovieGenre.valueOf(argument.toUpperCase());
         Deque<Movie> movieDeque = collectionManager.getMovieDeque();
         long count = movieDeque.stream().filter(m -> m.getGenre().compareTo(genre) > 0).count();

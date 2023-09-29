@@ -12,19 +12,13 @@ import java.util.Queue;
 
 public class EntityManager {
 
-    private static Long nextID;
 
-    private static Long getNextID() {
-        return nextID++;
-    }
-
-    public static Movie constructMovie(Queue<String> attributes) {
-        Long id = getNextID();
+    public static Movie constructMovie(Queue<String> attributes, String username) {
         String creationDate = LocalDate.now().toString();
-        return constructMovie(id, creationDate, attributes);
+        return constructMovie(creationDate, attributes, username);
     }
 
-    public static Movie constructMovie(Long id, String creationDate, Queue<String> attributes) {
+    public static Movie constructMovie(String creationDate, Queue<String> attributes, String username) {
         String name = attributes.poll();
         MovieGenre genre = MovieGenre.valueOf(Objects.requireNonNull(attributes.poll()).toUpperCase());
         String ratingString = attributes.poll();
@@ -34,7 +28,7 @@ public class EntityManager {
         Coordinates coordinates = constructCoordinates(attributes);
         Person operator = constructOperator(attributes);
 
-        return new Movie(id, creationDate, name, coordinates, genre, rating, oscarsCount, operator);
+        return new Movie(creationDate, name, coordinates, genre, rating, oscarsCount, operator, username);
     }
 
     private static Coordinates constructCoordinates(Queue<String> attributes) {
@@ -68,10 +62,6 @@ public class EntityManager {
                 null : Long.parseLong(Objects.requireNonNull(zString));
         String name = attributes.poll();
         return new Location(x, y, z, name);
-    }
-
-    public static void setNextID(Long newNextID) {
-        nextID = newNextID;
     }
 
 }

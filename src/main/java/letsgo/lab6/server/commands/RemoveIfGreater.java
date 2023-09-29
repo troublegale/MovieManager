@@ -17,11 +17,11 @@ public class RemoveIfGreater implements Command {
     }
 
     @Override
-    public String execute(String argument) {
+    public String execute(String argument, String username) {
         Queue<String> attributes = new ArrayDeque<>();
         Collections.addAll(attributes, argument.split("\n"));
-        Movie movie = EntityManager.constructMovie(attributes);
-        return collectionManager.removeIfGreater(movie);
+        Movie movie = EntityManager.constructMovie(attributes, username);
+        return collectionManager.removeIfGreater(movie, username);
     }
 
     @Override

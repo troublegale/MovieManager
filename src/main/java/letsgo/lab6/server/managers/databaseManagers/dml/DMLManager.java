@@ -1,6 +1,6 @@
 package letsgo.lab6.server.managers.databaseManagers.dml;
 
-import letsgo.lab6.server.DatabaseConfiguration;
+import letsgo.lab6.server.utility.DatabaseConfiguration;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

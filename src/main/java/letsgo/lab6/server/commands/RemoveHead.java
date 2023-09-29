@@ -11,8 +11,8 @@ public class RemoveHead implements Command {
     }
 
     @Override
-    public String execute(String argument) {
-        return collectionManager.removeHead();
+    public String execute(String argument, String username) {
+        return collectionManager.removeHead(username);
     }
 
     @Override

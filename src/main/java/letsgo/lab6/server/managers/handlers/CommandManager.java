@@ -28,9 +28,9 @@ public class CommandManager {
         commandMap.put("execute_script", new ExecuteScript(commandMap));
     }
 
-    public String execute(String commandName, String argument) {
+    public String execute(String commandName, String argument, String username) {
         Command command = commandMap.get(commandName);
-        return command.execute(argument);
+        return command.execute(argument, username);
     }
 
 }

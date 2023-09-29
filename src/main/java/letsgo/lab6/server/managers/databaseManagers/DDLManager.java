@@ -1,6 +1,6 @@
 package letsgo.lab6.server.managers.databaseManagers;
 
-import letsgo.lab6.server.DatabaseConfiguration;
+import letsgo.lab6.server.utility.DatabaseConfiguration;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -33,6 +33,7 @@ public class DDLManager {
                     x float,
                     y float,
                     z bigint,
+                    name text not null,
                     creator_id bigint not null references users(id) on delete cascade
                 );
                 
@@ -53,7 +54,7 @@ public class DDLManager {
                     creation_date text not null,
                     oscars_count bigint not null,
                     genre text not null,
-                    mpaa_rating text not null,
+                    mpaa_rating text,
                     person_id bigint not null references persons(id) on delete cascade,
                     creator_id bigint not null references users(id) on delete cascade
                 );

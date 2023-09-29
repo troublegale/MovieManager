@@ -11,9 +11,9 @@ public class RemoveByID implements Command {
     }
 
     @Override
-    public String execute(String argument) {
+    public String execute(String argument, String username) {
         Long id = Long.parseLong(argument);
-        return collectionManager.removeById(id);
+        return collectionManager.removeById(id, username);
     }
 
     @Override

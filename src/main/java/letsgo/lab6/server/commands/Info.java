@@ -13,7 +13,7 @@ public class Info implements Command {
         this.collectionManager = collectionManager;
     }
     @Override
-    public String execute(String argument) {
+    public String execute(String argument, String username) {
         Deque<Movie> movieDeque = collectionManager.getMovieDeque();
         StringBuilder sb = new StringBuilder();
         sb.append("Фильмы хранятся в коллекции ").append(movieDeque.getClass()).append(".\n");

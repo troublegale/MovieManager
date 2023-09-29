@@ -13,13 +13,13 @@ public class ExecuteScript implements Command {
     }
 
     @Override
-    public String execute(String argument) {
+    public String execute(String argument, String username) {
         Scanner scanner = new Scanner(argument);
         StringBuilder sb = new StringBuilder("Executing script.\n");
         while (scanner.hasNextLine()) {
             String executionResult;
             try {
-                executionResult = emulateCommandManager(scanner);
+                executionResult = emulateCommandManager(scanner, username);
             } catch (IllegalStateException e) {
                 sb.append("Завершения работы скрипта по команде 'exit'.\n");
                 return sb.toString();
@@ -31,7 +31,7 @@ public class ExecuteScript implements Command {
         return sb.append("Script finished execution.\n").toString();
     }
 
-    private String emulateCommandManager(Scanner scanner) throws IllegalStateException {
+    private String emulateCommandManager(Scanner scanner, String username) throws IllegalStateException {
         String currentString = scanner.nextLine();
         String[] words = currentString.split("\\s+", 2);
         if (words[0].isBlank()) {
@@ -45,18 +45,18 @@ public class ExecuteScript implements Command {
             for (int i = 0; i < 14; i++) {
                 sb.append(scanner.nextLine()).append("\n");
             }
-            return commandMap.get(words[0]).execute(sb.toString());
+            return commandMap.get(words[0]).execute(sb.toString(), username);
         } else if (words[0].equalsIgnoreCase("update")) {
             StringBuilder sb = new StringBuilder(words[1]);
             for (int i = 0; i < 14; i++) {
                 sb.append(scanner.nextLine()).append("\n");
             }
-            return commandMap.get(words[0]).execute(sb.toString());
+            return commandMap.get(words[0]).execute(sb.toString(), username);
         } else {
             if (words.length > 1) {
-                return commandMap.get(words[0]).execute(words[1]);
+                return commandMap.get(words[0]).execute(words[1], username);
             } else {
-                return commandMap.get(words[0]).execute(null);
+                return commandMap.get(words[0]).execute(null, username);
             }
         }
     }

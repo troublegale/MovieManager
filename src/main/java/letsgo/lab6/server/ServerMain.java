@@ -1,38 +1,40 @@
 package letsgo.lab6.server;
 
+import letsgo.lab6.server.entities.Movie;
 import letsgo.lab6.server.managers.CollectionManager;
 import letsgo.lab6.server.managers.databaseManagers.DDLManager;
+import letsgo.lab6.server.managers.databaseManagers.dml.MovieDMLManager;
+import letsgo.lab6.server.utility.DatabaseConfiguration;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import java.util.*;
 
 public class ServerMain {
-
-    private static CollectionManager collectionManager;
 
     public static void main(String[] args) {
 
         try {
+            Runtime.getRuntime().addShutdownHook(new Thread(ServerMain::exit));
             getDatabaseConfiguration();
             DDLManager.createTables();
             int port = 33506;
-            collectionManager = new CollectionManager();
+            ArrayDeque<Movie> movieDeque = (ArrayDeque<Movie>) Collections.synchronizedCollection(new ArrayDeque<Movie>());
+            movieDeque.addAll(MovieDMLManager.getMovies());
+            CollectionManager collectionManager = new CollectionManager(movieDeque);
             TCPServer server = new TCPServer(port, collectionManager);
             try {
                 server.run();
             } catch (NoSuchElementException e) {
-                System.out.println("Выход из программы.");
+                exit();
                 System.exit(0);
             }
         } catch (Exception e) {
-            System.out.println("Выход из программы.");
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            exit();
             System.exit(1);
         }
     }
-
 
     private static void getDatabaseConfiguration() {
         String credentials = System.getenv("CREDENTIALS");
@@ -51,6 +53,10 @@ public class ServerMain {
             System.out.println("Неверный формат файла с данными для доступа к БД.");
             throw new RuntimeException();
         }
+    }
+
+    private static void exit() {
+        System.out.println("Завершение программы.");
     }
 
 }

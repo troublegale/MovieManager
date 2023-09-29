@@ -1,6 +1,5 @@
 package letsgo.lab6.server.managers.databaseManagers.dml;
 
-import letsgo.lab6.server.DatabaseConfiguration;
 import letsgo.lab6.server.entities.User;
 import letsgo.lab6.server.managers.databaseManagers.PasswordManager;
 
@@ -63,6 +62,15 @@ public class UserDMLManager extends DMLManager {
         ResultSet resultSet = statement.executeQuery();
         resultSet.next();
         return resultSet.getLong(1);
+    }
+
+    protected static String getUsernameByID(Long id) throws SQLException {
+        Connection connection = getConnection();
+        PreparedStatement statement = connection.prepareStatement("select name from users where id = ?");
+        statement.setLong(1, id);
+        ResultSet resultSet = statement.executeQuery();
+        resultSet.next();
+        return resultSet.getString(1);
     }
 
 }

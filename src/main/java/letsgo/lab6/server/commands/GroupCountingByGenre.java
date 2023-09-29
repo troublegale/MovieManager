@@ -15,7 +15,7 @@ public class GroupCountingByGenre implements Command {
     }
 
     @Override
-    public String execute(String argument) {
+    public String execute(String argument, String username) {
         Deque<Movie> movieDeque = collectionManager.getMovieDeque();
         if (movieDeque.isEmpty()) {
             return "Пока что коллекция пуста.\n";

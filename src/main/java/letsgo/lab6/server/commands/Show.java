@@ -13,7 +13,7 @@ public class Show implements Command {
         this.collectionManager = collectionManager;
     }
     @Override
-    public String execute(String argument) {
+    public String execute(String argument, String username) {
         Deque<Movie> movieDeque = collectionManager.getMovieDeque();
         if (movieDeque.isEmpty()) {
             return "Коллекция пуста.\n";

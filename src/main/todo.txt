@@ -1,40 +1,7 @@
 TODO: complete all these steps
 
-movie id generation via database, get rid of nextID()
-
-initially read collection from database & save it locally
-
-actions on database with jdbc
-
-use transactions!!
-
-user can only access owned movies
-
-update collection after actions on database
-
-change ArrayDeque to a synchronized version
-
 split the commandRequest handling on server into 3 parts: receiving, executing & sending
 
 make every part complete in a separated thread using:
 CachedThreadPool for receiving, new Thread for executing, CachedThreadPool for sending
 
-
-
-
-try
-{
-  con.setAutoCommit(false);
-
-   //1 or more queries or updates
-
-   con.commit();
-}
-catch(Exception e)
-{
-   con.rollback();
-}
-finally
-{
-   con.close();
-}

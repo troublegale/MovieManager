@@ -10,7 +10,7 @@ public class Help implements Command {
         this.commandMap = commandMap;
     }
     @Override
-    public String execute(String argument) {
+    public String execute(String argument, String username) {
         StringBuilder sb = new StringBuilder();
         commandMap.forEach((k, v) -> sb.append(k)
                 .append(v.getArgumentRequirement() == null ? "" : " " + v.getArgumentRequirement())

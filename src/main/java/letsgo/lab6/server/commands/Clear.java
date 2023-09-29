@@ -11,8 +11,8 @@ public class Clear implements Command {
     }
 
     @Override
-    public String execute(String argument) {
-        return collectionManager.clearCollection();
+    public String execute(String argument, String username) {
+        return collectionManager.clearCollection(username);
     }
 
     @Override
