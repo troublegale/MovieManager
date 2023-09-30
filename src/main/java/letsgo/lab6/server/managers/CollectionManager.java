@@ -8,10 +8,10 @@ import java.util.*;
 
 public class CollectionManager {
 
-    private final ArrayDeque<Movie> movieDeque;
+    private final Deque<Movie> movieDeque;
 
 
-    public CollectionManager(ArrayDeque<Movie> movieDeque) {
+    public CollectionManager(Deque<Movie> movieDeque) {
         this.movieDeque = movieDeque;
     }
 

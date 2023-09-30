@@ -3,9 +3,12 @@ package letsgo.lab6.server.runnables;
 import letsgo.lab6.common.network.AuthRequest;
 import letsgo.lab6.common.network.AuthResponse;
 import letsgo.lab6.server.managers.handlers.AuthorizationManager;
+import letsgo.lab6.server.utility.CachedThreadPoolStorage;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.nio.channels.SocketChannel;
+import java.util.concurrent.ExecutorService;
 
 public class Authorizer implements Runnable {
 
@@ -13,12 +16,14 @@ public class Authorizer implements Runnable {
     private final String password;
     private final boolean registerOrLogin;
     private final ObjectOutputStream objectOutputStream;
+    private final SocketChannel clientChannel;
 
-    public Authorizer(AuthRequest request, ObjectOutputStream objectOutputStream) {
+    public Authorizer(AuthRequest request, ObjectOutputStream objectOutputStream, SocketChannel clientChannel) {
         username = request.username();
         password = request.password();
         registerOrLogin = request.registerOrLogin();
         this.objectOutputStream = objectOutputStream;
+        this.clientChannel = clientChannel;
     }
     @Override
     public void run() {
@@ -66,8 +71,8 @@ public class Authorizer implements Runnable {
     }
 
     private void delegateResponseSending(AuthResponse response) throws IOException {
-        objectOutputStream.writeObject(response);
-        objectOutputStream.flush();
+        ExecutorService cachedThreadPool = CachedThreadPoolStorage.getThreadPool();
+        cachedThreadPool.execute(new Sender(response, objectOutputStream, clientChannel));
     }
 
 }

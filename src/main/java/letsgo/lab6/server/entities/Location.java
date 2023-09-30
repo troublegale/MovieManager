@@ -4,6 +4,6 @@ public record Location(Float x, Float y, Long z, String name) {
 
     @Override
     public String toString() {
-        return "(" + x + "; " + y + "; " + z + ")";
+        return name + "(" + x + "; " + y + "; " + z + ")";
     }
 }

@@ -16,7 +16,8 @@ public class Info implements Command {
     public String execute(String argument, String username) {
         Deque<Movie> movieDeque = collectionManager.getMovieDeque();
         StringBuilder sb = new StringBuilder();
-        sb.append("Фильмы хранятся в коллекции ").append(movieDeque.getClass()).append(".\n");
+        sb.append("Фильмы хранятся в коллекции в базе данных, а также локально на сервере в коллекции ")
+                .append(movieDeque.getClass()).append(".\n");
         if (movieDeque.isEmpty()) {
             sb.append("Пока что коллекция пуста.\n");
         } else {

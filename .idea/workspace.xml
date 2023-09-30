@@ -4,33 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b44efd9-b455-4b29-b81c-ea25e539375e" name="Changes" comment="changes to DML managers; movie inserting into database, got rid of xml (entities are all records now except for Movie)">
+    <list default="true" id="8b44efd9-b455-4b29-b81c-ea25e539375e" name="Changes" comment="jdbc done, multithreading left">
+      <change afterPath="$PROJECT_DIR$/src/main/add" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jar/lab6client-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/lab6client-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jar/lab6server-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/lab6server-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/AddIfMin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/AddIfMin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Clear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/CountGreaterThanGenre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/CountGreaterThanGenre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/ExecuteScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/ExecuteScript.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/GroupCountingByGenre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/GroupCountingByGenre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Help.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/ServerMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/TCPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/TCPServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/RemoveByID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/RemoveByID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/RemoveHead.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/RemoveHead.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/RemoveIfGreater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/RemoveIfGreater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Show.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/SumOfOscarsCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/SumOfOscarsCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/commands/Update.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/entities/Movie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/EntityManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/EntityManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/databaseManagers/DDLManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/databaseManagers/DDLManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/databaseManagers/dml/MovieDMLManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/databaseManagers/dml/MovieDMLManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/databaseManagers/dml/UserDMLManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/databaseManagers/dml/UserDMLManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/handlers/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/handlers/CommandManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/todo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/todo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/runnables/Authorizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/runnables/Authorizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/runnables/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/runnables/Executor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/runnables/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/runnables/Receiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/runnables/Sender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/runnables/Sender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/utility/ServerConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/letsgo/lab6/server/utility/ServerConsole.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +106,7 @@
       <recent name="K:\Dev\Projects\Fergie-Lab6\src\main" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.Fergie-Lab6 [clientBuild]">
     <configuration name="Fergie-Lab6 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -187,8 +175,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Fergie-Lab6 [serverBuild]" />
         <item itemvalue="Gradle.Fergie-Lab6 [clientBuild]" />
+        <item itemvalue="Gradle.Fergie-Lab6 [serverBuild]" />
         <item itemvalue="Gradle.Fergie-Lab6 [build]" />
       </list>
     </recent_temporary>
@@ -239,6 +227,9 @@
       <workItem from="1695903126348" duration="1039000" />
       <workItem from="1695925119133" duration="7882000" />
       <workItem from="1695986546740" duration="6278000" />
+      <workItem from="1695993279101" duration="19912000" />
+      <workItem from="1696019988705" duration="273000" />
+      <workItem from="1696025753838" duration="5729000" />
     </task>
     <task id="LOCAL-00001" summary="setup">
       <option name="closed" value="true" />
@@ -416,7 +407,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695930384949</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="jdbc done, multithreading left">
+      <option name="closed" value="true" />
+      <created>1696007801517</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1696007801517</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -458,6 +457,18 @@
     <MESSAGE value="fixes on client &amp; some db managers" />
     <MESSAGE value="authorization on server &amp; some steps in dml" />
     <MESSAGE value="changes to DML managers; movie inserting into database, got rid of xml (entities are all records now except for Movie)" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes to DML managers; movie inserting into database, got rid of xml (entities are all records now except for Movie)" />
+    <MESSAGE value="jdbc done, multithreading left" />
+    <option name="LAST_COMMIT_MESSAGE" value="jdbc done, multithreading left" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/letsgo/lab6/server/managers/databaseManagers/dml/MovieDMLManager.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

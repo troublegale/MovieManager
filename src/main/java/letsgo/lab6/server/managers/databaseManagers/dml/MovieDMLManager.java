@@ -40,6 +40,7 @@ public class MovieDMLManager extends DMLManager {
         preparedStatement.setString(5, movie.getGenre().toString());
         preparedStatement.setString(6, rating);
         preparedStatement.setLong(7, operatorID);
+        preparedStatement.setLong(8, creatorID);
         ResultSet resultSet = preparedStatement.executeQuery();
         resultSet.next();
         return resultSet.getLong(1);
@@ -51,7 +52,11 @@ public class MovieDMLManager extends DMLManager {
                 values (?, ?, ?)
                 returning id;
                 """);
-        preparedStatement.setDouble(1, coordinates.x());
+        if (coordinates.x() == null) {
+            preparedStatement.setNull(1, Types.DOUBLE);
+        } else {
+            preparedStatement.setDouble(1, coordinates.x());
+        }
         preparedStatement.setFloat(2, coordinates.y());
         preparedStatement.setLong(3, creatorID);
         ResultSet resultSet = preparedStatement.executeQuery();
@@ -84,8 +89,8 @@ public class MovieDMLManager extends DMLManager {
 
     private static Long addLocation(Location location, Connection connection, Long creatorID) throws SQLException {
         PreparedStatement preparedStatement = connection.prepareStatement("""
-                insert into locations (x, y, z, creator_id)
-                values (?, ?, ?, ?)
+                insert into locations (x, y, z, name, creator_id)
+                values (?, ?, ?, ?, ?)
                 returning id;
                 """);
         Float x = location.x();
@@ -106,7 +111,8 @@ public class MovieDMLManager extends DMLManager {
         } else {
             preparedStatement.setLong(3, z);
         }
-        preparedStatement.setLong(4, creatorID);
+        preparedStatement.setString(4, location.name());
+        preparedStatement.setLong(5, creatorID);
         ResultSet resultSet = preparedStatement.executeQuery();
         resultSet.next();
         return resultSet.getLong(1);

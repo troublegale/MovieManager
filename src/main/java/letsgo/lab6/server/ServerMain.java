@@ -9,6 +9,7 @@ import letsgo.lab6.server.utility.DatabaseConfiguration;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 public class ServerMain {
 
@@ -19,8 +20,7 @@ public class ServerMain {
             getDatabaseConfiguration();
             DDLManager.createTables();
             int port = 33506;
-            ArrayDeque<Movie> movieDeque = (ArrayDeque<Movie>) Collections.synchronizedCollection(new ArrayDeque<Movie>());
-            movieDeque.addAll(MovieDMLManager.getMovies());
+            Deque<Movie> movieDeque = new ConcurrentLinkedDeque<>(MovieDMLManager.getMovies());
             CollectionManager collectionManager = new CollectionManager(movieDeque);
             TCPServer server = new TCPServer(port, collectionManager);
             try {
